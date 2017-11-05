@@ -1,0 +1,12 @@
+{
+  "name": "predator-web",
+  "version": "1.0.0",
+  "description": "Web app of predator platform",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/radonlab/predator-web.git"
+  },
+  "author": "skylerlee <skyler.ac.lee@gmail.com>",
+  "license": "MIT"
+}
