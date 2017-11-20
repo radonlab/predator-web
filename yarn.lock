@@ -2103,6 +2103,10 @@ watchpack@^1.4.0:
     chokidar "^1.7.0"
     graceful-fs "^4.1.2"
 
+wavebell@^0.0.2:
+  version "0.0.2"
+  resolved "http://registry.npm.taobao.org/wavebell/download/wavebell-0.0.2.tgz#8fb41547aecaceed97c897e44444fc78265aef6d"
+
 webpack-sources@^1.0.1:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/webpack-sources/download/webpack-sources-1.0.2.tgz#d0148ec083b3b5ccef1035a6b3ec16442983b27a"
