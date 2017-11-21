@@ -8,6 +8,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(
-  React.createElement('h1', null, 'Hello world!'),
+  <h1>Hello React!</h1>,
   document.getElementById('app')
 )

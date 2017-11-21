@@ -9,6 +9,14 @@ module.exports = {
     path: config.distPath,
     filename: `${config.appName}.js`
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './template/index.html'
