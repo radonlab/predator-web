@@ -7,11 +7,14 @@
 import React from 'react'
 
 class SpeechPortal extends React.Component {
+  toggleSearch () {
+  }
+
   render () {
     return (
       <div className="speech-portal">
         <input className="search-box" />
-        <button>Search</button>
+        <button onClick={this.toggleSearch}>Search</button>
       </div>
     )
   }
