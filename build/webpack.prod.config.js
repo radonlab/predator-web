@@ -7,7 +7,7 @@ const merge = require('webpack-merge')
 
 module.exports = merge(baseConfig, {
   output: {
-    filename: `${config.appName}.min.js`
+    filename: config.targetName
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin()

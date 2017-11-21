@@ -6,12 +6,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: './src/app.js',
+    predator: './src/app.js',
     vendor: ['react', 'react-dom']
   },
   output: {
-    path: config.distPath,
-    filename: `${config.appName}.js`
+    path: config.destPath,
+    filename: config.targetName
   },
   module: {
     rules: [
