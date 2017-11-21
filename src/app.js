@@ -12,13 +12,13 @@ class App extends React.Component {
   render () {
     return (
       <div className="container">
-        <SpeechPortal/>
+        <SpeechPortal />
       </div>
     )
   }
 }
 
 ReactDOM.render(
-  <App/>,
+  <App />,
   document.getElementById('app')
 )
