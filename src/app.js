@@ -7,6 +7,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import SpeechPortal from '@/speech/SpeechPortal'
+import './index.scss'
 
 class App extends React.Component {
   render () {
