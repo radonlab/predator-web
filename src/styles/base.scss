@@ -4,5 +4,7 @@
  * found in the LICENSE file.
  */
 
-@import "~normalize.css";
-@import "styles/base.scss";
+.container {
+  width: 80%;
+  margin: 30px auto;
+}
