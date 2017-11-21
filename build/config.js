@@ -3,6 +3,6 @@
 const path = require('path')
 
 module.exports = {
-  appName: 'predator',
-  distPath: path.resolve(__dirname, '../dist')
+  destPath: path.resolve(__dirname, '../dist'),
+  targetName: '[name].js?v=[chunkhash]'
 }
