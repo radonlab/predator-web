@@ -6,10 +6,15 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import SpeechPortal from '@/speech/SpeechPortal'
 
 class App extends React.Component {
   render () {
-    return <h1>Hello React!</h1>
+    return (
+      <div className="container">
+        <SpeechPortal/>
+      </div>
+    )
   }
 }
 

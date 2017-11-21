@@ -7,6 +7,9 @@
 import React from 'react'
 
 class SpeechPortal extends React.Component {
+  render () {
+    return <input/>
+  }
 }
 
 export default SpeechPortal
