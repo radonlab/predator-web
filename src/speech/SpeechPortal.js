@@ -8,7 +8,12 @@ import React from 'react'
 
 class SpeechPortal extends React.Component {
   render () {
-    return <input />
+    return (
+      <div className="speech-portal">
+        <input className="search-box" />
+        <button>Search</button>
+      </div>
+    )
   }
 }
 
