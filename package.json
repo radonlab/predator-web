@@ -10,7 +10,8 @@
   "author": "skylerlee <skyler.ac.lee@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config build/webpack.dev.config.js",
+    "dev": "webpack-dev-server --config build/webpack.dev.config.js",
+    "start": "webpack-dashboard -- npm run dev",
     "build": "webpack --config build/webpack.prod.config.js",
     "lint": "eslint ./src"
   },
