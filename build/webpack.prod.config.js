@@ -10,6 +10,9 @@ module.exports = merge(baseConfig, {
     filename: config.targetName
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    }),
     new webpack.optimize.UglifyJsPlugin()
   ]
 })
