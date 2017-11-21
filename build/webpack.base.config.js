@@ -13,6 +13,11 @@ module.exports = {
     path: config.destPath,
     filename: config.targetName
   },
+  resolve: {
+    alias: {
+      '@': config.srcPath
+    }
+  },
   module: {
     rules: [
       {
