@@ -5673,9 +5673,9 @@ watchpack@^1.4.0:
     chokidar "^1.7.0"
     graceful-fs "^4.1.2"
 
-wavebell@^0.1.0:
-  version "0.1.0"
-  resolved "http://registry.npm.taobao.org/wavebell/download/wavebell-0.1.0.tgz#5fe048b91988535577323c4dead3ef3ffe1eb17c"
+wavebell@^0.1.1:
+  version "0.1.1"
+  resolved "http://registry.npm.taobao.org/wavebell/download/wavebell-0.1.1.tgz#c784bdb830bd3aeb9b40ae95e950e8466ac8a9cf"
 
 wbuf@^1.1.0, wbuf@^1.7.2:
   version "1.7.2"
