@@ -5,7 +5,7 @@ const style = require('./style.filter')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const config = {
+let baseConfig = {
   entry: {
     predator: './src/app.js',
     vendor: ['react', 'react-dom']
@@ -45,6 +45,6 @@ const config = {
   ]
 }
 
-config = style.filter(config)
+baseConfig = style.filter(baseConfig)
 
-module.exports = config
+module.exports = baseConfig
