@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 let baseConfig = {
   entry: {
-    predator: './src/app.js',
+    predator: ['./src/app.js', './src/index.scss'],
     vendor: ['react', 'react-dom']
   },
   output: {
