@@ -5,11 +5,13 @@
  */
 
 import React from 'react'
+import WaveBell from 'wavebell'
 
 class SpeechPortal extends React.Component {
   constructor () {
     super()
     this.binds(['toggleSearch'])
+    this.bell = new WaveBell()
   }
 
   toggleSearch () {
