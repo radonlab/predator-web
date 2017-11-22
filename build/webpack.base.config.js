@@ -1,10 +1,11 @@
 'use strict'
 
 const config = require('./config')
+const style = require('./style.filter')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-module.exports = {
+const config = {
   entry: {
     predator: './src/app.js',
     vendor: ['react', 'react-dom']
@@ -43,3 +44,7 @@ module.exports = {
     })
   ]
 }
+
+config = style(config)
+
+module.exports = config
