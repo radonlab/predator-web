@@ -7,6 +7,11 @@
 import React from 'react'
 
 class SpeechPortal extends React.Component {
+  constructor () {
+    super()
+    this.binds(['toggleSearch'])
+  }
+
   toggleSearch () {
   }
 
