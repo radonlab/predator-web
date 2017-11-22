@@ -7,6 +7,7 @@ module.exports = {
   destPath: path.resolve(__dirname, '../dist'),
   targetName: '[name].js?v=[chunkhash:8]',
   options: {
+    productionSourceMap: 'hidden-source-map',
     extractCSS: false
   }
 }
