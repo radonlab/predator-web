@@ -15,6 +15,11 @@ class SpeechPortal extends React.Component {
   }
 
   toggleSearch () {
+    if (this.bell.state === 'inactive') {
+      this.bell.start(1000 / 25)
+    } else {
+      this.bell.stop()
+    }
   }
 
   render () {
