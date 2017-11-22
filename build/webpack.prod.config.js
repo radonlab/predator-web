@@ -1,13 +1,13 @@
 'use strict'
 
-const config = require('./config')
+const settings = require('./settings')
 const baseConfig = require('./webpack.base.config')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 
 module.exports = merge(baseConfig, {
   output: {
-    filename: config.targetName
+    filename: settings.targetName
   },
   plugins: [
     new webpack.DefinePlugin({

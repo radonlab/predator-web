@@ -1,6 +1,6 @@
 'use strict'
 
-const config = require('./config')
+const settings = require('./settings')
 const style = require('./style.filter')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -11,12 +11,12 @@ let baseConfig = {
     vendor: ['react', 'react-dom']
   },
   output: {
-    path: config.destPath,
-    filename: config.targetName
+    path: settings.destPath,
+    filename: settings.targetName
   },
   resolve: {
     alias: {
-      '@': config.srcPath
+      '@': settings.srcPath
     }
   },
   module: {
