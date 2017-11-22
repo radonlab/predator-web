@@ -4,6 +4,7 @@
  * found in the LICENSE file.
  */
 
+import '@/core/bootstrap'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import SpeechPortal from '@/speech/SpeechPortal'
