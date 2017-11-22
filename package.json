@@ -10,9 +10,11 @@
   "author": "skylerlee <skyler.ac.lee@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "rimraf ./dist",
     "dev": "webpack-dev-server --config build/webpack.dev.config.js",
     "start": "webpack-dashboard -- npm run dev",
     "build": "webpack --config build/webpack.prod.config.js",
+    "rebuild": "run-s clean build",
     "lint": "eslint ./src"
   },
   "devDependencies": {
