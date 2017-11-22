@@ -10,7 +10,7 @@ function info (msg) {
 }
 
 let extractPlugin = new ExtractTextPlugin({
-  filename: '[name].css?v=[chunkhash:8]'
+  filename: '[name].css?v=[contenthash:8]'
 })
 
 function patchLoaders (loaders) {
