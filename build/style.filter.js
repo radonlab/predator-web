@@ -1,8 +1,13 @@
 'use strict'
 
 const settings = require('./settings')
+const chalk = require('chalk')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+
+function info (msg) {
+  console.log(chalk.bold('[Filter] ') + chalk.green(msg))
+}
 
 let extractPlugin = new ExtractTextPlugin({
   filename: '[name].css?v=[chunkhash:8]'
@@ -31,6 +36,7 @@ function patchRules (rules) {
     let rule = rules[i]
     if (isStyleRule(rule) && Array.isArray(rule.use)) {
       rules[i].use = patchLoaders(rule.use)
+      info(`Extract css with rule: ${String(rule.test)}`)
     }
   }
   return rules
