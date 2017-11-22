@@ -45,6 +45,6 @@ const config = {
   ]
 }
 
-config = style(config)
+config = style.filter(config)
 
 module.exports = config

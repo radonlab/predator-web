@@ -1,5 +1,7 @@
 'use strict'
 
-module.exports = function (config) {
-  return config
+module.exports = {
+  filter (config) {
+    return config
+  }
 }
