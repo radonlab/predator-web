@@ -23,4 +23,4 @@ module.exports = filters(merge(baseConfig, {
       sourceMap: settings.options.productionSourceMap
     })
   ]
-}))(['styl5e'])
+}))(['style'])
