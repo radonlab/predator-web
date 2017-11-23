@@ -6,6 +6,7 @@
 
 import React from 'react'
 import WaveBell from 'wavebell'
+import cns from 'classnames'
 
 class SpeechPortal extends React.Component {
   constructor () {
@@ -49,7 +50,7 @@ class SpeechPortal extends React.Component {
           <input type="text" />
           <a className="vbtn" href="javascript:void(0)"
             onClick={this.toggleSearch}>
-            <span className={'acicon-speech' + (this.state.speaking ? '-on' : '')}></span>
+            <span className={'acicon-speech' + cns({ '-on': this.state.speaking })}></span>
           </a>
         </div>
       </div>
