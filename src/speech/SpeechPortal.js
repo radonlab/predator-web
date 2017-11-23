@@ -29,6 +29,7 @@ class SpeechPortal extends React.Component {
           <input type="text" />
           <a className="vbtn" href="javascript:void(0)"
             onClick={this.toggleSearch}>
+            <span className="acicon-speech"></span>
           </a>
         </div>
       </div>
