@@ -1,7 +1,3 @@
 'use strict'
 
-module.exports = {
-  plugins: {
-    cssnano: {}
-  }
-}
+module.exports = {}

@@ -1,5 +1,14 @@
 'use strict'
 
+function cssLoader (env) {
+  return {
+    loader: 'css-loader',
+    options: {
+      minimize: env === 'production'
+    }
+  }
+}
+
 function get (env) {
   return [
     {
@@ -8,11 +17,11 @@ function get (env) {
     },
     {
       test: /\.css$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader']
+      use: ['style-loader', cssLoader(env), 'postcss-loader']
     },
     {
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+      use: ['style-loader', cssLoader(env), 'postcss-loader', 'sass-loader']
     }
   ]
 }
