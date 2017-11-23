@@ -9,6 +9,7 @@
   },
   "author": "skylerlee <skyler.ac.lee@gmail.com>",
   "license": "MIT",
+  "browserslist": "last 2 versions, ie 9",
   "scripts": {
     "clean": "rimraf ./dist",
     "dev": "webpack-dev-server --config build/webpack.dev.config.js",
