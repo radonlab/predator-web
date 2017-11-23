@@ -4,7 +4,8 @@
  * found in the LICENSE file.
  */
 
-@import "styles/preset.scss";
-@import "~normalize.css";
-@import "styles/base.scss";
-@import "speech/style.scss";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
