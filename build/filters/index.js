@@ -1,5 +1,11 @@
 'use strict'
 
+const chalk = require('chalk')
+
+function error (msg) {
+  console.log(chalk.bold('[filters] ') + chalk.red(msg))
+}
+
 function loadFilter (name) {
   try {
     return require(`./${name}.filter`)
