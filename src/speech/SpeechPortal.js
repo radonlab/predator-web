@@ -10,8 +10,28 @@ import WaveBell from 'wavebell'
 class SpeechPortal extends React.Component {
   constructor () {
     super()
+    this.state = {
+      speaking: false
+    }
     this.binds(['toggleSearch'])
     this.bell = new WaveBell()
+    this.setupBell(this.bell)
+  }
+
+  setupBell (bell) {
+    bell.on('wave', e => {
+      console.log(e)
+    })
+    bell.on('start', e => {
+      this.setState({
+        speaking: true
+      })
+    })
+    bell.on('stop', e => {
+      this.setState({
+        speaking: false
+      })
+    })
   }
 
   toggleSearch () {
@@ -29,7 +49,7 @@ class SpeechPortal extends React.Component {
           <input type="text" />
           <a className="vbtn" href="javascript:void(0)"
             onClick={this.toggleSearch}>
-            <span className="acicon-speech"></span>
+            <span className={'acicon-speech' + (this.state.speaking ? '-on' : '')}></span>
           </a>
         </div>
       </div>
