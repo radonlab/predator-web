@@ -25,8 +25,8 @@ function applyFilters (config) {
       for (var i = 0; i < filterNames.length; i++) {
         let name = filterNames[i]
         let filter = loadFilter(name)
-        if (filter && typeof filter === 'function') {
-          config = filter.filter(config)
+        if (typeof filter === 'function') {
+          config = filter(config)
         } else {
           throw new Error('Failed to apply filter: ' + name)
         }
