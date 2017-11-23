@@ -13,6 +13,8 @@ module.exports = filters(merge(baseConfig, {
   },
   devtool: 'eval-source-map',
   devServer: {
+    https: true,
+    host: 'localhost',
     port: 8090,
     hot: true
   },
