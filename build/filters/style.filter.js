@@ -6,7 +6,7 @@ const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function info (msg) {
-  console.log(chalk.bold('[Filter] ') + chalk.green(msg))
+  console.log(chalk.bold('[style.filter] ') + chalk.green(msg))
 }
 
 let extractPlugin = new ExtractTextPlugin({
