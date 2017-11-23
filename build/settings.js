@@ -8,6 +8,6 @@ module.exports = {
   targetName: '[name].js?v=[hash:8]',
   options: {
     productionSourceMap: 'hidden-source-map',
-    extractCSS: false
+    extractCSS: true
   }
 }
