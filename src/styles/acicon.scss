@@ -5,4 +5,11 @@
  */
 
 .acicon {
+  position: relative;
+  color: #ffffff;
+}
+
+%stroke {
+  content: "";
+  position: absolute;
 }
