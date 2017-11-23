@@ -2,11 +2,12 @@
 
 const baseConfig = require('./webpack.base.config')
 const loaders = require('./loaders')
+const filters = require('./filters')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const DashboardPlugin = require('webpack-dashboard/plugin')
 
-module.exports = merge(baseConfig, {
+module.exports = filters(merge(baseConfig, {
   module: {
     rules: loaders.get('development')
   },
@@ -20,4 +21,4 @@ module.exports = merge(baseConfig, {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
-})
+}))(['style'])

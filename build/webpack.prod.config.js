@@ -3,10 +3,11 @@
 const settings = require('./settings')
 const baseConfig = require('./webpack.base.config')
 const loaders = require('./loaders')
+const filters = require('./filters')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 
-module.exports = merge(baseConfig, {
+module.exports = filters(merge(baseConfig, {
   output: {
     filename: settings.targetName
   },
@@ -22,4 +23,4 @@ module.exports = merge(baseConfig, {
       sourceMap: settings.options.productionSourceMap
     })
   ]
-})
+}))(['style'])
