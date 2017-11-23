@@ -14,6 +14,11 @@ function loadFilter (name) {
   }
 }
 
+/**
+ * Apply filters to webpack config object
+ * @param {object} config - config object
+ * @returns {function} - a function accepting the names of filters
+ */
 function applyFilters (config) {
   return function (filterNames) {
     try {
