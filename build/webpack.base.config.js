@@ -19,22 +19,6 @@ let baseConfig = {
       '@': settings.srcPath
     }
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
-      },
-      {
-        test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-      }
-    ]
-  },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
