@@ -27,8 +27,10 @@ class SpeechPortal extends React.Component {
       <div className="speech-portal">
         <div className="search-box">
           <input type="text" />
+          <a className="vbtn" href="javascript:void(0)"
+            onClick={this.toggleSearch}>
+          </a>
         </div>
-        <button onClick={this.toggleSearch}>Search</button>
       </div>
     )
   }
