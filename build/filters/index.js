@@ -16,16 +16,21 @@ function loadFilter (name) {
 
 function applyFilters (config) {
   return function (filterNames) {
-    for (var i = 0; i < filterNames.length; i++) {
-      let name = filterNames[i]
-      let filter = loadFilter(name)
-      if (filter && typeof filter === 'function') {
-        config = filter.filter(config)
-      } else {
-        throw new Error('Failed to apply filter: ' + name)
+    try {
+      for (var i = 0; i < filterNames.length; i++) {
+        let name = filterNames[i]
+        let filter = loadFilter(name)
+        if (filter && typeof filter === 'function') {
+          config = filter.filter(config)
+        } else {
+          throw new Error('Failed to apply filter: ' + name)
+        }
       }
+      return config
+    } catch (e) {
+      error(e.toString())
+      process.exit(1)
     }
-    return config
   }
 }
 
