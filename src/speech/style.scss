@@ -7,7 +7,7 @@
 .speech-portal {
   .search-box {
     position: relative;
-    height: 2rem;
+    height: 2.2rem;
     background-color: #ffffff;
     color: #333333;
     border: 2px solid #ff5722;
@@ -28,8 +28,16 @@
       right: 1px;
       bottom: 1px;
       width: 48px;
+      text-align: center;
       background-color: #ff7043;
       border-radius: 2px;
+      @include valign();
+
+      > span {
+        vertical-align: middle;
+        margin-left: -4px;
+        margin-bottom: -1px;
+      }
     }
   }
 }
