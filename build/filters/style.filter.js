@@ -1,6 +1,6 @@
 'use strict'
 
-const settings = require('./settings')
+const settings = require('../settings')
 const chalk = require('chalk')
 const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -54,20 +54,20 @@ let patch = {
   plugins: []
 }
 
-module.exports = {
-  filter (config) {
-    if (settings.options.extractCSS) {
-      config = merge({
-        customizeArray (a, b, key) {
-          if (key === 'module.rules') {
-            return patchRules(a)
-          }
-          if (key === 'plugins') {
-            return patchPlugins(a)
-          }
+function filter (config) {
+  if (settings.options.extractCSS) {
+    config = merge({
+      customizeArray (a, b, key) {
+        if (key === 'module.rules') {
+          return patchRules(a)
         }
-      })(config, patch)
-    }
-    return config
+        if (key === 'plugins') {
+          return patchPlugins(a)
+        }
+      }
+    })(config, patch)
   }
+  return config
 }
+
+module.exports = filter
