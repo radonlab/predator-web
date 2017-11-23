@@ -6,6 +6,9 @@ const merge = require('webpack-merge')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function info (msg) {
+  if (process.env.NODE_ENV === 'analysis') {
+    return
+  }
   console.log(chalk.bold('[style.filter] ') + chalk.green(msg))
 }
 

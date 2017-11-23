@@ -3,6 +3,9 @@
 const chalk = require('chalk')
 
 function error (msg) {
+  if (process.env.NODE_ENV === 'analysis') {
+    return
+  }
   console.log(chalk.bold('[filters] ') + chalk.red(msg))
 }
 

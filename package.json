@@ -16,7 +16,8 @@
     "start": "webpack-dashboard -- npm run dev",
     "build": "webpack --config build/webpack.prod.config.js",
     "rebuild": "run-s clean build",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "profile": "cross-env NODE_ENV=analysis webpack --config build/webpack.prod.config.js --profile --json > stats.json"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
