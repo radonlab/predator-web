@@ -25,7 +25,9 @@ class SpeechPortal extends React.Component {
   render () {
     return (
       <div className="speech-portal">
-        <input className="search-box" />
+        <div className="search-box">
+          <input type="text" />
+        </div>
         <button onClick={this.toggleSearch}>Search</button>
       </div>
     )
