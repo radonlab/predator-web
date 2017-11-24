@@ -29,19 +29,19 @@ class WaveLayer extends Layer {
     super()
     let x = 0.5 * Stage.get('width')
     let y = 0.5 * Stage.get('height')
-    this.col1 = new WaveColumn(x, y + columnHeight)
-    this.col2 = new WaveColumn(x, y + 2 * columnHeight + 1)
-    this.col3 = new WaveColumn(x, y + 3 * columnHeight + 2)
-    this.add(this.col1)
-    this.add(this.col2)
-    this.add(this.col3)
+    let gap = columnHeight + 2
+    const colsNum = 5
+    for (let i = 0; i < colsNum; i++) {
+      this.add(new WaveColumn(x, y + i * gap))
+    }
   }
 
   set value (value) {
     // pass value downwards
-    this.col3.value = this.col2.value
-    this.col2.value = this.col1.value
-    this.col1.value = value
+    for (let i = this.length - 1; i > 0; i--) {
+      this.getAt(i).value = this.getAt(i - 1).value
+    }
+    this.getAt(0).value = value
   }
 }
 
