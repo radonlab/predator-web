@@ -27,11 +27,13 @@ class SpeechPortal extends React.Component {
       console.log(e)
     })
     bell.on('start', e => {
+      this.viewer.startUpdate()
       this.setState({
         speaking: true
       })
     })
     bell.on('stop', e => {
+      this.viewer.stopUpdate()
       this.setState({
         speaking: false
       })

@@ -5,7 +5,18 @@
  */
 
 class Visualizer {
-  constructor () {
+  constructor (canvas) {
+    this.canvas = canvas
+    this.active = false
+  }
+
+  update () {
+  }
+
+  startUpdate () {
+  }
+
+  stopUpdate () {
   }
 }
 
