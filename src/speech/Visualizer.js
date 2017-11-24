@@ -9,6 +9,7 @@ import {Stage, Shape, Layer} from '@/render'
 class WaveColumn extends Shape {
   constructor () {
     super()
+    this.value = 0
   }
 
   draw (ctx) {
@@ -27,7 +28,11 @@ class WaveLayer extends Layer {
     this.add(this.col3)
   }
 
-  setValue (value) {
+  set value (value) {
+    // pass value downwards
+    this.col3.value = this.col2.value
+    this.col2.value = this.col1.value
+    this.col1.value = value
   }
 }
 
@@ -44,7 +49,7 @@ class Visualizer extends Stage {
   }
 
   putValue (value) {
-    this.waveLayer.setValue(value)
+    this.waveLayer.value = value
   }
 
   update () {
