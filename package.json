@@ -12,7 +12,7 @@
   "browserslist": "last 2 versions, ie 9",
   "scripts": {
     "clean": "rimraf ./dist",
-    "dev": "webpack-dev-server --config build/webpack.dev.config.js",
+    "serve": "webpack-dev-server --config build/webpack.dev.config.js",
     "start": "webpack-dashboard -- npm run dev",
     "build": "webpack --config build/webpack.prod.config.js",
     "lint": "eslint ./src",
