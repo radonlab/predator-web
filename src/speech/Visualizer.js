@@ -8,6 +8,10 @@ import {Stage, Shape, Layer} from '@/render'
 
 const columnHeight = 15
 
+/**
+ * Shape that represents sound level
+ * @extends Shape
+ */
 class WaveColumn extends Shape {
   constructor (x, y) {
     super()
@@ -24,6 +28,10 @@ class WaveColumn extends Shape {
   }
 }
 
+/**
+ * Layer that draws waving columns by values
+ * @extends Layer
+ */
 class WaveLayer extends Layer {
   constructor () {
     super()
@@ -45,6 +53,10 @@ class WaveLayer extends Layer {
   }
 }
 
+/**
+ * Main controller that visualizes audio in canvas
+ * @extends Stage
+ */
 class Visualizer extends Stage {
   constructor (canvas) {
     super(canvas)
