@@ -6,11 +6,20 @@
 
 import Layer from './Layer'
 
+const store = {
+  canvas: null
+}
+
 class Stage extends Layer {
   constructor (canvas) {
     super()
     this.canvas = canvas
     this._context = this._initContext()
+    if (store.canvas) {
+      throw new Error('Stage cannot be reinitialized')
+    } else {
+      store.canvas = canvas
+    }
   }
 
   _initContext () {
@@ -31,6 +40,10 @@ class Stage extends Layer {
   renderFrame () {
     let ctx = this._context
     this.draw(ctx)
+  }
+
+  static get (prop) {
+    return store[prop]
   }
 }
 
