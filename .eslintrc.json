@@ -1,10 +1,14 @@
 {
   "extends": [
     "standard",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
   ],
   "env": {
     "browser": true
   },
-  "plugins": ["react"]
+  "plugins": [
+    "react",
+    "flowtype"
+  ]
 }
