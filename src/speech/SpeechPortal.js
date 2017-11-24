@@ -59,11 +59,11 @@ class SpeechPortal extends React.Component {
           <input type="text" />
           <a className="vbtn" href="javascript:void(0)"
             onClick={this.toggleSearch}>
-            <span className={'acicon-speech' + cns({ '-on': this.state.speaking })}></span>
+            <span className={'acicon-speech' + cns({'-on': this.state.speaking})}></span>
           </a>
         </div>
         <div className="stage-holder">
-          <canvas ref={el => this.canvas = el}></canvas>
+          <canvas ref={el => (this.canvas = el)}></canvas>
         </div>
       </div>
     )
