@@ -8,8 +8,9 @@ import Layer from './Layer'
 
 class Stage extends Layer {
   constructor (canvas) {
+    super()
     this.canvas = canvas
-    this.context = this._initContext()
+    this._context = this._initContext()
   }
 
   _initContext () {
@@ -28,6 +29,7 @@ class Stage extends Layer {
   }
 
   renderFrame () {
+    let ctx = this._context
   }
 }
 
