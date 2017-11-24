@@ -4,9 +4,11 @@
  * found in the LICENSE file.
  */
 
-class Visualizer {
+import Stage from '@/render/Stage'
+
+class Visualizer extends Stage {
   constructor (canvas) {
-    this.canvas = canvas
+    super(canvas)
     this.active = false
   }
 
