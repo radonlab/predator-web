@@ -11,12 +11,19 @@ class Visualizer {
   }
 
   update () {
+    if (!this.active) { return }
+    requestAnimationFrame(() => this.update())
+    // draw frame
+    console.log('update')
   }
 
   startUpdate () {
+    this.active = true
+    this.update()
   }
 
   stopUpdate () {
+    this.active = false
   }
 }
 
