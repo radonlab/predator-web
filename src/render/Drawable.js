@@ -5,8 +5,6 @@
  * found in the LICENSE file.
  */
 
-interface Drawable {
+export interface Drawable {
   draw (ctx: CanvasRenderingContext2D): void
 }
-
-export default Drawable
