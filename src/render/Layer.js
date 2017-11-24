@@ -36,6 +36,9 @@ class Layer implements Drawable {
   }
 
   draw (ctx: CanvasRenderingContext2D) {
+    for (let i = 0; i < this._children.length; i++) {
+      this._children[i].draw(ctx)
+    }
   }
 }
 
