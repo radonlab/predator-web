@@ -15,16 +15,18 @@ function assertType (inst, type) {
 }
 
 class Layer implements Drawable {
+  _children: Array<Drawable>
+
   constructor () {
     this._children = []
   }
 
-  add (shape) {
+  add (shape: Drawable) {
     assertType(shape, Shape)
     this._children.push(shape)
   }
 
-  remove (shape) {
+  remove (shape: Drawable) {
     assertType(shape, Shape)
     let i = this._children.indexOf(shape)
     if (i > -1) {
@@ -32,6 +34,9 @@ class Layer implements Drawable {
     } else {
       return null
     }
+  }
+
+  draw (ctx: CanvasRenderingContext2D) {
   }
 }
 

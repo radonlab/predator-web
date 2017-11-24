@@ -10,6 +10,9 @@ import type {Drawable} from './Drawable'
 class Shape implements Drawable {
   constructor () {
   }
+
+  draw (ctx: CanvasRenderingContext2D) {
+  }
 }
 
 export default Shape
