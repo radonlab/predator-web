@@ -25,7 +25,7 @@ function loadFilter (name) {
 function applyFilters (config) {
   return function (filterNames) {
     try {
-      for (var i = 0; i < filterNames.length; i++) {
+      for (let i = 0; i < filterNames.length; i++) {
         let name = filterNames[i]
         let filter = loadFilter(name)
         if (typeof filter === 'function') {
