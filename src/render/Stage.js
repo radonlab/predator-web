@@ -4,7 +4,9 @@
  * found in the LICENSE file.
  */
 
-class Stage {
+import Layer from './Layer'
+
+class Stage extends Layer {
   constructor (canvas) {
     this.canvas = canvas
     this.context = this._initContext()
