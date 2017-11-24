@@ -16,6 +16,7 @@
     "start": "webpack-dashboard -- npm run dev",
     "build": "webpack --config build/webpack.prod.config.js",
     "lint": "eslint ./src",
+    "flow": "flow check",
     "rebuild": "run-s clean lint build",
     "profile": "cross-env NODE_ENV=analysis webpack --config build/webpack.prod.config.js --profile --json > stats.json",
     "analyse": "webpack-bundle-analyzer stats.json",
