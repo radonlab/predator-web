@@ -6,6 +6,24 @@
 
 import {Stage, Shape, Layer} from '@/render'
 
+class WaveColumn extends Shape {
+  constructor () {
+    super()
+  }
+}
+
+class WaveLayer extends Layer {
+  constructor () {
+    super()
+    this.col1 = new WaveColumn()
+    this.col2 = new WaveColumn()
+    this.col3 = new WaveColumn()
+    this.add(this.col1)
+    this.add(this.col2)
+    this.add(this.col3)
+  }
+}
+
 class Visualizer extends Stage {
   constructor (canvas) {
     super(canvas)
@@ -14,6 +32,8 @@ class Visualizer extends Stage {
   }
 
   init () {
+    this.waveLayer = new WaveLayer()
+    this.add(this.waveLayer)
   }
 
   putValue (value) {
