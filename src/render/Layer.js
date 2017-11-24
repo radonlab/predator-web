@@ -6,7 +6,6 @@
  */
 
 import type {Drawable} from './Drawable'
-import Shape from './Shape'
 
 function assertDrawable (inst) {
   if (!('draw' in inst)) {
