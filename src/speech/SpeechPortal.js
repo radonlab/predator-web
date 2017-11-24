@@ -24,7 +24,7 @@ class SpeechPortal extends React.Component {
 
   setupBell (bell) {
     bell.on('wave', e => {
-      console.log(e)
+      this.viewer.putValue(e.value)
     })
     bell.on('start', e => {
       this.viewer.startUpdate()

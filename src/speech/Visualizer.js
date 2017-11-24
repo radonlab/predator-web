@@ -10,6 +10,9 @@ class Visualizer {
     this.active = false
   }
 
+  putValue (value) {
+  }
+
   update () {
     if (!this.active) { return }
     requestAnimationFrame(() => this.update())
