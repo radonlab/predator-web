@@ -10,6 +10,10 @@ class WaveColumn extends Shape {
   constructor () {
     super()
   }
+
+  draw (ctx) {
+    console.log(ctx)
+  }
 }
 
 class WaveLayer extends Layer {
@@ -21,6 +25,9 @@ class WaveLayer extends Layer {
     this.add(this.col1)
     this.add(this.col2)
     this.add(this.col3)
+  }
+
+  setValue (value) {
   }
 }
 
@@ -37,6 +44,7 @@ class Visualizer extends Stage {
   }
 
   putValue (value) {
+    this.waveLayer.setValue(value)
   }
 
   update () {

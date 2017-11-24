@@ -30,6 +30,7 @@ class Stage extends Layer {
 
   renderFrame () {
     let ctx = this._context
+    this.draw(ctx)
   }
 }
 
