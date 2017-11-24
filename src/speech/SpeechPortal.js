@@ -7,6 +7,7 @@
 import React from 'react'
 import WaveBell from 'wavebell'
 import cns from 'classnames'
+import Visualizer from './Visualizer'
 
 class SpeechPortal extends React.Component {
   constructor () {
@@ -16,6 +17,7 @@ class SpeechPortal extends React.Component {
     }
     this.binds(['toggleSearch'])
     this.canvas = null
+    this.viewer = null
     this.bell = new WaveBell()
     this.setupBell(this.bell)
   }
@@ -34,6 +36,10 @@ class SpeechPortal extends React.Component {
         speaking: false
       })
     })
+  }
+
+  componentDidMount () {
+    this.viewer = new Visualizer(this.canvas)
   }
 
   toggleSearch () {
