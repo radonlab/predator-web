@@ -6,23 +6,32 @@
 
 import {Stage, Shape, Layer} from '@/render'
 
+const columnHeight = 15
+
 class WaveColumn extends Shape {
-  constructor () {
+  constructor (x, y) {
     super()
+    this.x = x
+    this.y = y
     this.value = 0
   }
 
   draw (ctx) {
-    console.log(ctx)
+    let maxWidth = this.x * 1.6
+    let width = this.value * maxWidth
+    ctx.clearRect(this.x - 0.5 * maxWidth, this.y, maxWidth, columnHeight)
+    ctx.fillRect(this.x - 0.5 * width, this.y, width, columnHeight)
   }
 }
 
 class WaveLayer extends Layer {
   constructor () {
     super()
-    this.col1 = new WaveColumn()
-    this.col2 = new WaveColumn()
-    this.col3 = new WaveColumn()
+    let x = 0.5 * Stage.get('width')
+    let y = 0.5 * Stage.get('height')
+    this.col1 = new WaveColumn(x, y + columnHeight)
+    this.col2 = new WaveColumn(x, y + 2 * columnHeight + 1)
+    this.col3 = new WaveColumn(x, y + 3 * columnHeight + 2)
     this.add(this.col1)
     this.add(this.col2)
     this.add(this.col3)
