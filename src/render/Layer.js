@@ -1,9 +1,11 @@
+// @flow
 /*
  * Copyright (C) 2017, Skyler.
  * Use of this source code is governed by the MIT license that can be
  * found in the LICENSE file.
  */
 
+import Drawable from './Drawable'
 import Shape from './Shape'
 
 function assertType (inst, type) {
@@ -12,7 +14,7 @@ function assertType (inst, type) {
   }
 }
 
-class Layer {
+class Layer implements Drawable {
   constructor () {
     this._children = []
   }
