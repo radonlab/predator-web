@@ -10,5 +10,8 @@
   "plugins": [
     "react",
     "flowtype"
-  ]
+  ],
+  "rules": {
+    "object-curly-spacing": "error"
+  }
 }
