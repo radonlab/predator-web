@@ -4,12 +4,16 @@
  * found in the LICENSE file.
  */
 
-import Stage from '@/render/Stage'
+import {Stage, Shape, Layer} from '@/render'
 
 class Visualizer extends Stage {
   constructor (canvas) {
     super(canvas)
     this.active = false
+    this.init()
+  }
+
+  init () {
   }
 
   putValue (value) {
