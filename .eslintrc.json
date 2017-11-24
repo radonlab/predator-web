@@ -12,6 +12,9 @@
     "flowtype"
   ],
   "rules": {
+    "no-var": "error",
+    "no-empty": "error",
+    "no-console": "error",
     "object-curly-spacing": "error"
   }
 }
