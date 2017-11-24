@@ -5,7 +5,7 @@
  * found in the LICENSE file.
  */
 
-import Drawable from './Drawable'
+import type {Drawable} from './Drawable'
 import Shape from './Shape'
 
 function assertType (inst, type) {

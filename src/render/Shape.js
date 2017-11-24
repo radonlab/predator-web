@@ -5,7 +5,7 @@
  * found in the LICENSE file.
  */
 
-import Drawable from './Drawable'
+import type {Drawable} from './Drawable'
 
 class Shape implements Drawable {
   constructor () {
