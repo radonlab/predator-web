@@ -8,7 +8,7 @@ import Shape from './Shape'
 
 function assertType (inst, type) {
   if (!(inst instanceof type)) {
-    throw new TypeError('Expect instance of ' + type.name)
+    throw new TypeError('Expect an instance of ' + type.name)
   }
 }
 
