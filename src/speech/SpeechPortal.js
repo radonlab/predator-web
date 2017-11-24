@@ -15,6 +15,7 @@ class SpeechPortal extends React.Component {
       speaking: false
     }
     this.binds(['toggleSearch'])
+    this.canvas = null
     this.bell = new WaveBell()
     this.setupBell(this.bell)
   }
@@ -52,6 +53,9 @@ class SpeechPortal extends React.Component {
             onClick={this.toggleSearch}>
             <span className={'acicon-speech' + cns({ '-on': this.state.speaking })}></span>
           </a>
+        </div>
+        <div className="vstage">
+          <canvas ref={el => this.canvas = el}></canvas>
         </div>
       </div>
     )
