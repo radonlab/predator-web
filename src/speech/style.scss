@@ -38,4 +38,14 @@
       }
     }
   }
+
+  .stage-holder {
+    text-align: center;
+    padding: 15px;
+
+    canvas {
+      width: 30rem;
+      height: 20rem;
+    }
+  }
 }

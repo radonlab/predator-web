@@ -60,7 +60,7 @@ class SpeechPortal extends React.Component {
             <span className={'acicon-speech' + cns({ '-on': this.state.speaking })}></span>
           </a>
         </div>
-        <div className="vstage">
+        <div className="stage-holder">
           <canvas ref={el => this.canvas = el}></canvas>
         </div>
       </div>
