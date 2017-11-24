@@ -11,6 +11,9 @@ class Stage {
 
   initContext () {
   }
+
+  renderFrame () {
+  }
 }
 
 export default Stage

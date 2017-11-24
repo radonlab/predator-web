@@ -18,8 +18,8 @@ class Visualizer extends Stage {
   update () {
     if (!this.active) { return }
     requestAnimationFrame(() => this.update())
-    // draw frame
-    console.log('update')
+    // render frame
+    this.renderFrame()
   }
 
   startUpdate () {
