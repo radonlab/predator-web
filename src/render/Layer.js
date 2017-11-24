@@ -20,6 +20,14 @@ class Layer implements Drawable {
     this._children = []
   }
 
+  get length (): number {
+    return this._children.length
+  }
+
+  getAt (idx: number) {
+    return this._children[idx]
+  }
+
   add (shape: Drawable) {
     assertDrawable(shape)
     this._children.push(shape)
