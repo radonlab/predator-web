@@ -8,8 +8,8 @@
 import type {Drawable} from './Drawable'
 
 function assertDrawable (inst) {
-  if (!('draw' in inst)) {
-    throw new TypeError('Argument is not drawable')
+  if (!inst || !('draw' in inst)) {
+    throw new TypeError(inst + ' is not drawable')
   }
 }
 
