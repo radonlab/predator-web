@@ -51,6 +51,12 @@ class WaveLayer extends Layer {
     }
     this.getAt(0).value = value
   }
+
+  clear () {
+    for (let i = 0; i < this.length; i++) {
+      this.getAt(i).value = 0
+    }
+  }
 }
 
 /**
@@ -73,9 +79,14 @@ class Visualizer extends Stage {
     this.waveLayer.value = value
   }
 
+  clearValue () {
+    this.waveLayer.clear()
+  }
+
   update () {
-    if (!this.active) { return }
-    requestAnimationFrame(() => this.update())
+    if (this.active) {
+      requestAnimationFrame(() => this.update())
+    }
     // render frame
     this.renderFrame()
   }
@@ -87,6 +98,7 @@ class Visualizer extends Stage {
 
   stopUpdate () {
     this.active = false
+    this.clearValue()
   }
 }
 
