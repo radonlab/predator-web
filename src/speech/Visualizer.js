@@ -5,6 +5,7 @@
  */
 
 import {Stage, Shape, Layer} from '@/render'
+import Backdrop from './Backdrop'
 
 const columnHeight = 15
 
@@ -71,6 +72,8 @@ class Visualizer extends Stage {
   }
 
   init () {
+    this.backLayer = new Backdrop()
+    this.add(this.backLayer)
     this.waveLayer = new WaveLayer()
     this.add(this.waveLayer)
   }
