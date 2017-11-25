@@ -6,8 +6,8 @@
 
 import {Stage, Shape, Layer} from '@/render'
 
-const headWidth = 200
-const headHeight = 100
+const headWidth = 280
+const headHeight = 160
 
 class DroidHead extends Shape {
   constructor (x, y) {
