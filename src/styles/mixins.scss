@@ -21,3 +21,17 @@
     vertical-align: middle;
   }
 }
+
+@mixin screen-gt($name) {
+  $width: map-get($screen-widths, $name);
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin screen-lt($name) {
+  $width: map-get($screen-widths, $name);
+  @media (max-width: $width) {
+    @content;
+  }
+}
