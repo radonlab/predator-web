@@ -34,7 +34,8 @@ class DroidHead extends Shape {
     ctx.bezierCurveTo(
       cx0, y0,
       cx1, y0,
-      x1 - headPadH, y0 + headPadV)
+      x1 - headPadH, y0 + headPadV
+    )
     ctx.bezierCurveTo(
       x1, cy0,
       x1, cy1,
@@ -43,7 +44,8 @@ class DroidHead extends Shape {
     ctx.bezierCurveTo(
       cx1, y1,
       cx0, y1,
-      x0 + headPadH, y1 - headPadV)
+      x0 + headPadH, y1 - headPadV
+    )
     ctx.bezierCurveTo(
       x0, cy1,
       x0, cy0,
