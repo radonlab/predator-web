@@ -7,8 +7,8 @@
 import {Stage, Shape, Layer} from '@/render'
 import Backdrop from './Backdrop'
 
-const columnWidth = 80
-const columnHeight = 15
+const columnWidth = 200
+const columnHeight = 12
 
 /**
  * Shape that represents sound level
@@ -37,7 +37,7 @@ class WaveLayer extends Layer {
   constructor () {
     super()
     let x = 0.5 * Stage.get('width')
-    let y = 0.5 * Stage.get('height')
+    let y = 60
     let gap = columnHeight + 2
     const colsNum = 5
     for (let i = 0; i < colsNum; i++) {
