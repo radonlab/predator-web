@@ -54,8 +54,8 @@ class DroidHead extends Shape {
   }
 }
 
-const glassWidth = 200
-const glassHeight = 80
+const glassWidth = 210
+const glassHeight = 84
 const glassRadius = 10
 
 class DroidGlass extends Shape {
@@ -92,7 +92,7 @@ class Backdrop extends Layer {
     let x = 0.5 * Stage.get('width')
     let y = 100
     this.add(new DroidHead(x, y))
-    this.add(new DroidGlass(x, y))
+    this.add(new DroidGlass(x, y - 6))
   }
 }
 
