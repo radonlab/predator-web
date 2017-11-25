@@ -7,6 +7,7 @@
 import {Stage, Shape, Layer} from '@/render'
 import Backdrop from './Backdrop'
 
+const columnWidth = 80
 const columnHeight = 15
 
 /**
@@ -22,9 +23,8 @@ class WaveColumn extends Shape {
   }
 
   draw (ctx) {
-    let maxWidth = this.x * 1.6
-    let width = this.value * maxWidth
-    ctx.clearRect(this.x - 0.5 * maxWidth, this.y, maxWidth, columnHeight)
+    let width = this.value * columnWidth
+    ctx.clearRect(this.x - 0.5 * columnWidth, this.y, columnWidth, columnHeight)
     ctx.fillRect(this.x - 0.5 * width, this.y, width, columnHeight)
   }
 }
