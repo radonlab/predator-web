@@ -59,6 +59,7 @@ class DroidHead extends Shape {
 const glassWidth = 210
 const glassHeight = 84
 const glassRadius = 10
+const glassPad = 10
 
 class DroidGlass extends Shape {
   constructor (x, y) {
@@ -77,23 +78,39 @@ class DroidGlass extends Shape {
     // Omit clearing for better performance
     // ctx.clearRect(x0, y0, glassWidth, glassHeight)
     ctx.beginPath()
-    ctx.moveTo(x0 + glassRadius, y0)
+    ctx.moveTo(x0 + glassRadius, y0 + glassPad)
     ctx.bezierCurveTo(
-      cx0, y0 - 10,
-      cx1, y0 - 10,
-      x1 - glassRadius, y0
+      cx0, y0,
+      cx1, y0,
+      x1 - glassRadius, y0 + glassPad
     )
-    ctx.arcTo(x1, y0, x1, y0 + glassRadius, glassRadius)
-    ctx.lineTo(x1, y1 - glassRadius)
-    ctx.arcTo(x1, y1, x1 - glassRadius, y1, glassRadius)
+    ctx.arcTo(
+      x1, y0 + glassPad,
+      x1, y0 + glassPad + glassRadius,
+      glassRadius
+    )
+    ctx.lineTo(x1, y1 - glassPad - glassRadius)
+    ctx.arcTo(
+      x1, y1 - glassPad,
+      x1 - glassRadius, y1 - glassPad,
+      glassRadius
+    )
     ctx.bezierCurveTo(
-      cx1, y1 + 10,
-      cx0, y1 + 10,
-      x0 + glassRadius, y1
+      cx1, y1,
+      cx0, y1,
+      x0 + glassRadius, y1 - glassPad
     )
-    ctx.arcTo(x0, y1, x0, y1 - glassRadius, glassRadius)
-    ctx.lineTo(x0, y0 + glassRadius)
-    ctx.arcTo(x0, y0, x0 + glassRadius, y0, glassRadius)
+    ctx.arcTo(
+      x0, y1 - glassPad,
+      x0, y1 - glassPad - glassRadius,
+      glassRadius
+    )
+    ctx.lineTo(x0, y0 + glassPad + glassRadius)
+    ctx.arcTo(
+      x0, y0 + glassPad,
+      x0 + glassRadius, y0 + glassPad,
+      glassRadius
+    )
     ctx.closePath()
     ctx.stroke()
   }
