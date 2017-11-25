@@ -7,9 +7,13 @@
 
 import type {Drawable} from './Drawable'
 
+function toString (obj: any): string {
+  return Object.prototype.toString.call(obj)
+}
+
 function assertDrawable (inst) {
   if (!inst || !('draw' in inst)) {
-    throw new TypeError(inst + ' is not drawable')
+    throw new TypeError(toString(inst) + ' is not drawable')
   }
 }
 
