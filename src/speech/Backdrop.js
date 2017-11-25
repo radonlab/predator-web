@@ -17,14 +17,15 @@ class DroidHead extends Shape {
   }
 
   draw (ctx) {
+    // center to (x, y)
     let x0 = this.x - 0.5 * headWidth
-    let y0 = this.y
+    let y0 = this.y - 0.5 * headHeight
     let x1 = this.x + 0.5 * headWidth
-    let y1 = this.y + headHeight
+    let y1 = this.y + 0.5 * headHeight
     let cx0 = this.x - 0.2 * headWidth
     let cx1 = this.x + 0.2 * headWidth
-    let cy0 = this.y + 0.3 * headHeight
-    let cy1 = this.y + 0.6 * headHeight
+    let cy0 = this.y - 0.2 * headHeight
+    let cy1 = this.y + 0.1 * headHeight
     const padh = 10
     const padv = 15
     ctx.clearRect(x0, y0, headWidth, headHeight)
@@ -57,7 +58,7 @@ class Backdrop extends Layer {
   constructor () {
     super()
     let x = 0.5 * Stage.get('width')
-    let y = 30
+    let y = 100
     this.add(new DroidHead(x, y))
   }
 }
