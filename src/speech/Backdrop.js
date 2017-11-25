@@ -54,12 +54,45 @@ class DroidHead extends Shape {
   }
 }
 
+const glassWidth = 200
+const glassHeight = 80
+const glassRadius = 10
+
+class DroidGlass extends Shape {
+  constructor (x, y) {
+    super()
+    this.x = x
+    this.y = y
+  }
+
+  draw (ctx) {
+    let x0 = this.x - 0.5 * glassWidth
+    let y0 = this.y - 0.5 * glassHeight
+    let x1 = this.x + 0.5 * glassWidth
+    let y1 = this.y + 0.5 * glassHeight
+    ctx.clearRect(x0, y0, glassWidth, glassHeight)
+    ctx.beginPath()
+    ctx.moveTo(x0 + glassRadius, y0)
+    ctx.lineTo(x1 - glassRadius, y0)
+    ctx.arcTo(x1, y0, x1, y0 + glassRadius, glassRadius)
+    ctx.lineTo(x1, y1 - glassRadius)
+    ctx.arcTo(x1, y1, x1 - glassRadius, y1, glassRadius)
+    ctx.lineTo(x0 + glassRadius, y1)
+    ctx.arcTo(x0, y1, x0, y1 - glassRadius, glassRadius)
+    ctx.lineTo(x0, y0 + glassRadius)
+    ctx.arcTo(x0, y0, x0 + glassRadius, y0, glassRadius)
+    ctx.closePath()
+    ctx.stroke()
+  }
+}
+
 class Backdrop extends Layer {
   constructor () {
     super()
     let x = 0.5 * Stage.get('width')
     let y = 100
     this.add(new DroidHead(x, y))
+    this.add(new DroidGlass(x, y))
   }
 }
 
