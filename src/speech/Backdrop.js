@@ -27,13 +27,15 @@ class DroidHead extends Shape {
     ctx.clearRect(x0, y0, headWidth, headHeight)
     ctx.beginPath()
     ctx.moveTo(x0, y0 + padv)
-    ctx.bezierCurveTo(cx0, y0,
-                      cx1, y0,
-                      x1, y0 + padv)
+    ctx.bezierCurveTo(
+      cx0, y0,
+      cx1, y0,
+      x1, y0 + padv)
     ctx.lineTo(x1, y1 - padv)
-    ctx.bezierCurveTo(cx1, y1,
-                      cx0, y1,
-                      x0, y1 - padv)
+    ctx.bezierCurveTo(
+      cx1, y1,
+      cx0, y1,
+      x0, y1 - padv)
     ctx.closePath()
     ctx.stroke()
   }
