@@ -17,16 +17,23 @@ class DroidHead extends Shape {
   }
 
   draw (ctx) {
-    ctx.clearRect(this.x - 0.5 * headWidth, this.y, headWidth, headHeight)
+    let x0 = this.x - 0.5 * headWidth
+    let y0 = this.y
+    let x1 = this.x + 0.5 * headWidth
+    let y1 = this.y + headHeight
+    let cx0 = this.x - 0.2 * headWidth
+    let cx1 = this.x + 0.2 * headWidth
+    const padv = 15
+    ctx.clearRect(x0, y0, headWidth, headHeight)
     ctx.beginPath()
-    ctx.moveTo(this.x - 0.5 * headWidth, this.y + 10)
-    ctx.bezierCurveTo(this.x - 0.25 * headWidth, this.y,
-                      this.x + 0.25 * headWidth, this.y,
-                      this.x + 0.5 * headWidth, this.y + 10)
-    ctx.lineTo(this.x + 0.5 * headWidth, this.y + headHeight - 10)
-    ctx.bezierCurveTo(this.x + 0.25 * headWidth, this.y + headHeight,
-                      this.x - 0.25 * headWidth, this.y + headHeight,
-                      this.x - 0.5 * headWidth, this.y + headHeight - 10)
+    ctx.moveTo(x0, y0 + padv)
+    ctx.bezierCurveTo(cx0, y0,
+                      cx1, y0,
+                      x1, y0 + padv)
+    ctx.lineTo(x1, y1 - padv)
+    ctx.bezierCurveTo(cx1, y1,
+                      cx0, y1,
+                      x0, y1 - padv)
     ctx.closePath()
     ctx.stroke()
   }
