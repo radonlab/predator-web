@@ -44,8 +44,12 @@
     padding: 15px;
 
     canvas {
-      width: 30rem;
-      height: 20rem;
+      width: 400px;
+      height: 320px;
+
+      @include screen-gt (md) {
+        width: 560px;
+      }
     }
   }
 }
