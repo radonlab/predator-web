@@ -8,7 +8,11 @@
 import type {Drawable} from './Drawable'
 
 function toString (obj: any): string {
-  return Object.prototype.toString.call(obj)
+  if (typeof obj === 'object' && obj !== null) {
+    return obj.constructor.name
+  } else {
+    return '' + obj
+  }
 }
 
 function assertDrawable (inst) {
