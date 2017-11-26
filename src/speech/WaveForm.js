@@ -5,7 +5,7 @@
  */
 
 import {Stage, Shape, Layer} from '@/render'
-import {cyan, darkGray} from './colordef'
+import {cyan, darkGray} from './colordefs'
 
 /**
  * Shape that represents sound level

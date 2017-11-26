@@ -5,7 +5,7 @@
  */
 
 import {Stage, Shape, Layer} from '@/render'
-import {darkGray} from './colordef'
+import {darkGray} from './colordefs'
 
 class DroidGear extends Shape {
   constructor (side, ...args) {
