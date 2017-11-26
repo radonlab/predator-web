@@ -6,7 +6,7 @@
 
 const black = '#000000'
 const cyan = '#33eefe'
-const orange = '#ff9800'
+const orange = '#fc8800'
 const darkGray = '#323842'
 const lightGray = '#e5e5e5'
 
