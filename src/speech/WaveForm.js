@@ -8,7 +8,7 @@ import {Stage, Shape, Layer} from '@/render'
 import {cyan, darkGray} from './colordefs'
 
 /**
- * Shape that represents sound level
+ * Shape that represents the sound level
  * @extends Shape
  */
 class WaveColumn extends Shape {
