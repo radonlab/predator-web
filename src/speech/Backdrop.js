@@ -6,12 +6,22 @@
 
 import {Stage, Shape, Layer} from '@/render'
 
-class DroidEars extends Shape {
+class DroidGear extends Shape {
+  constructor (side, ...args) {
+    super(...args)
+    if (side === 'r') {
+      this.matrix = [1, 0, 0, 1, 0, 0]
+    } else {
+      this.matrix = [-1, 0, 0, 1, this.width, 0]
+    }
+  }
+
   onDraw (ctx) {
     const pad = 10
     let cy0 = 0.3 * this.height
     let cy1 = 0.7 * this.height
     ctx.clearRect(0, 0, this.width, this.height)
+    ctx.transform.apply(ctx, this.matrix)
     ctx.beginPath()
     ctx.moveTo(0, 0)
     ctx.lineTo(pad, 0)
