@@ -18,8 +18,9 @@ class WaveColumn extends Shape {
 
   onDraw (ctx) {
     let width = this.value * this.width
-    ctx.clearRect(this.x - 0.5 * this.width, this.y, this.width, this.height)
-    ctx.fillRect(this.x - 0.5 * width, this.y, width, this.height)
+    let x0 = 0.5 * (this.width - width)
+    ctx.clearRect(0, 0, this.width, this.height)
+    ctx.fillRect(x0, 0, width, this.height)
   }
 }
 
@@ -30,10 +31,11 @@ class WaveColumn extends Shape {
 class WaveForm extends Layer {
   constructor () {
     super()
-    const x = 0.5 * Stage.get('width')
-    const y = 60
+    const median = 0.5 * Stage.get('width')
     const width = 200
     const height = 12
+    const x = median - 0.5 * width
+    const y = 60
     const gap = height + 2
     for (let i = 0; i < 5; i++) {
       this.add(new WaveColumn(x, y + i * gap, width, height))
