@@ -9,3 +9,15 @@
 *::after {
   box-sizing: border-box;
 }
+
+html {
+  // NOTE: html is set to 62.5% so that all the REM measurements are based on
+  // 10px sizing. So basically 1.5rem = 15px
+  font-size: 62.5%;
+}
+
+body {
+  // restore default font size
+  font-size: 1.6em;
+  font-family: sans-serif;
+}
