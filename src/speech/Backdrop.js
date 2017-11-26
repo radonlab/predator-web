@@ -81,7 +81,7 @@ class DroidGlass extends Shape {
     // Omit clearing for better performance
     // ctx.clearRect(x0, y0, glassWidth, glassHeight)
     ctx.beginPath()
-    ctx.moveTo(x0 + glassRadius, y0 + glassPadV)
+    ctx.moveTo(x0 + glassPadH + glassRadius, y0 + glassPadV)
     ctx.bezierCurveTo(
       cx0, y0,
       cx1, y0,
