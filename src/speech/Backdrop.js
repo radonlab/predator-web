@@ -6,19 +6,22 @@
 
 import {Stage, Shape, Layer} from '@/render'
 
-const earWidth = 20
-const earHeight = 50
-const earOffset = 10
-
 class DroidEars extends Shape {
   onDraw (ctx) {
-    let lx0 = this.x - 0.5 * 280 - earWidth
-    let rx0 = this.x + 0.5 * 280
-    let y0 = this.y - 0.5 * earHeight - earOffset
-    ctx.clearRect(lx0, y0, earWidth, earHeight)
-    ctx.clearRect(rx0, y0, earWidth, earHeight)
-    ctx.rect(lx0, y0, earWidth, earHeight)
-    ctx.rect(rx0, y0, earWidth, earHeight)
+    const pad = 10
+    let cy0 = 0.3 * this.height
+    let cy1 = 0.7 * this.height
+    ctx.clearRect(0, 0, this.width, this.height)
+    ctx.beginPath()
+    ctx.moveTo(0, 0)
+    ctx.lineTo(pad, 0)
+    ctx.bezierCurveTo(
+      this.width, cy0,
+      this.width, cy1,
+      pad, this.height
+    )
+    ctx.lineTo(0, this.height)
+    ctx.closePath()
     ctx.stroke()
   }
 }
