@@ -20,6 +20,10 @@ class Shape implements Drawable {
     this.y = 0
   }
 
+  doDraw (ctx: CanvasRenderingContext2D) {
+    this.draw(ctx)
+  }
+
   draw (ctx: CanvasRenderingContext2D) {}
 }
 
