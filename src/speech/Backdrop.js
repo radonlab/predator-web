@@ -134,9 +134,22 @@ class Backdrop extends Layer {
   constructor () {
     super()
     const median = 0.5 * Stage.get('width')
-    // this.add(new DroidEars(x, y))
+    this.add(this._initAddons(median))
     this.add(this._initHead(median))
     this.add(this._initGlass(median))
+  }
+
+  _initAddons (median) {
+    const width = 15
+    const height = 80
+    const offsetX = 135
+    let lx = median - offsetX - width
+    let rx = median + offsetX
+    let y = 60
+    let layer = new Layer()
+    layer.add(new DroidGear('l', lx, y, width, height))
+    layer.add(new DroidGear('r', rx, y, width, height))
+    return layer
   }
 
   _initHead (median) {
