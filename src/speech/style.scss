@@ -5,6 +5,11 @@
  */
 
 .speech-portal {
+  @include screen-gt (lg) {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
   .search-box {
     position: relative;
     height: 3.5rem;
