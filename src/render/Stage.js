@@ -45,7 +45,7 @@ class Stage extends Layer {
 
   renderFrame () {
     let ctx = this._context
-    this.doDraw(ctx)
+    this.draw(ctx)
   }
 
   static get (prop) {

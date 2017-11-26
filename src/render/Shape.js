@@ -19,13 +19,13 @@ class Shape implements Drawable {
     this.y = 0
   }
 
-  doDraw (ctx: CanvasRenderingContext2D) {
+  draw (ctx: CanvasRenderingContext2D) {
     ctx.save()
-    this.draw(ctx)
+    this.onDraw(ctx)
     ctx.restore()
   }
 
-  draw (ctx: CanvasRenderingContext2D) {}
+  onDraw (ctx: CanvasRenderingContext2D) {}
 }
 
 export default Shape
