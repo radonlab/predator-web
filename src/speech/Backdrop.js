@@ -155,6 +155,20 @@ class DroidGlass extends Shape {
   }
 }
 
+class DroidMouth extends Shape {
+  onDraw (ctx) {
+    let x0 = 0.15 * this.width
+    let x1 = 0.85 * this.width
+    ctx.beginPath()
+    ctx.moveTo(0, this.height)
+    ctx.lineTo(x0, 0)
+    ctx.lineTo(x1, 0)
+    ctx.lineTo(this.width, this.height)
+    // ctx.strokeStyle = ''
+    ctx.stroke()
+  }
+}
+
 /**
  * Layer that draws all background elements
  * @extends Layer
@@ -166,6 +180,7 @@ class Backdrop extends Layer {
     this.add(this._initAddons(median))
     this.add(this._initHead(median))
     this.add(this._initGlass(median))
+    this.add(this._initMouth(median))
   }
 
   _initAddons (median) {
@@ -195,6 +210,14 @@ class Backdrop extends Layer {
     let x = median - 0.5 * width
     let y = 44
     return new DroidGlass(x, y, width, height)
+  }
+
+  _initMouth (median) {
+    const width = 60
+    const height = 15
+    let x = median - 0.5 * width
+    let y = 160
+    return new DroidMouth(x, y, width, height)
   }
 }
 
