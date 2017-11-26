@@ -45,7 +45,7 @@
 
     canvas {
       width: 400px;
-      height: 320px;
+      height: 200px;
 
       @include screen-gt (md) {
         width: 560px;
