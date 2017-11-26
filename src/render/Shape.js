@@ -7,9 +7,6 @@
 
 import type {Drawable} from './Drawable'
 
-// TODO:(Improve drawing strategy)
-// * Add point relative position
-// * Add context transform matrix
 class Shape implements Drawable {
   x: number
   y: number
