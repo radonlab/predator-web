@@ -129,16 +129,16 @@ class Backdrop extends Layer {
   _initHead (median) {
     const width = 280
     const height = 160
-    const x = median - 0.5 * width
-    const y = 20
+    let x = median - 0.5 * width
+    let y = 20
     return new DroidHead(x, y, width, height)
   }
 
   _initGlass (median) {
     const width = 224
     const height = 100
-    const x = median - 0.5 * width
-    const y = 44
+    let x = median - 0.5 * width
+    let y = 44
     return new DroidGlass(x, y, width, height)
   }
 }
