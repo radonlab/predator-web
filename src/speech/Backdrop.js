@@ -6,6 +6,29 @@
 
 import {Stage, Shape, Layer} from '@/render'
 
+const earWidth = 20
+const earHeight = 50
+const earOffset = 10
+
+class DroidEars extends Shape {
+  constructor (x, y) {
+    super()
+    this.x = x
+    this.y = y
+  }
+
+  draw (ctx) {
+    let lx0 = this.x - 0.5 * headWidth - earWidth
+    let rx0 = this.x + 0.5 * headWidth
+    let y0 = this.y - 0.5 * earHeight - earOffset
+    ctx.clearRect(lx0, y0, earWidth, earHeight)
+    ctx.clearRect(rx0, y0, earWidth, earHeight)
+    ctx.rect(lx0, y0, earWidth, earHeight)
+    ctx.rect(rx0, y0, earWidth, earHeight)
+    ctx.stroke()
+  }
+}
+
 const headWidth = 280
 const headHeight = 160
 const headPadH = 10
@@ -132,6 +155,7 @@ class Backdrop extends Layer {
     super()
     let x = 0.5 * Stage.get('width')
     let y = 100
+    this.add(new DroidEars(x, y))
     this.add(new DroidHead(x, y))
     this.add(new DroidGlass(x, y - 6))
   }
