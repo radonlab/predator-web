@@ -4,7 +4,7 @@
  * found in the LICENSE file.
  */
 
-import {Stage, Shape, Layer} from '@/render'
+import {Stage} from '@/render'
 import Backdrop from './Backdrop'
 import WaveForm from './WaveForm'
 
