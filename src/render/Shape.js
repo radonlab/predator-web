@@ -7,6 +7,10 @@
 
 import type {Drawable} from './Drawable'
 
+// TODO:(Improve drawing strategy)
+// * Add point relative position
+// * Add context transform matrix
+// * Add save/restore before/after draw
 class Shape implements Drawable {
   x: number
   y: number
