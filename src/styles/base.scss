@@ -21,4 +21,16 @@ body {
 .container {
   padding: 0 1.5rem;
   margin: 0 auto;
+
+  @include screen-gt (sm) {
+    width: 90%;
+  }
+
+  @include screen-gt (md) {
+    width: 75%;
+  }
+
+  @include screen-gt (lg) {
+    width: 60%;
+  }
 }
