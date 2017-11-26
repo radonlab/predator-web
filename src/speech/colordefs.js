@@ -7,9 +7,11 @@
 const black = '#000000'
 const cyan = '#33eefe'
 const darkGray = '#323842'
+const lightGray = '#e5e5e5'
 
 export {
   black,
   cyan,
-  darkGray
+  darkGray,
+  lightGray
 }

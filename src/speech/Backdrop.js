@@ -5,7 +5,7 @@
  */
 
 import {Stage, Shape, Layer} from '@/render'
-import {darkGray} from './colordefs'
+import {darkGray, lightGray} from './colordefs'
 
 class DroidGear extends Shape {
   constructor (side, ...args) {
@@ -69,7 +69,8 @@ class DroidHead extends Shape {
       hpad, vpad
     )
     ctx.closePath()
-    ctx.stroke()
+    ctx.fillStyle = lightGray
+    ctx.fill()
   }
 }
 
