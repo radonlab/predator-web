@@ -128,11 +128,26 @@ class DroidGlass extends Shape {
 class Backdrop extends Layer {
   constructor () {
     super()
-    let x = 0.5 * Stage.get('width')
-    let y = 100
-    this.add(new DroidEars(x, y))
-    this.add(new DroidHead(x, y, 280, 160))
-    this.add(new DroidGlass(x, y - 6, 224, 100))
+    const median = 0.5 * Stage.get('width')
+    // this.add(new DroidEars(x, y))
+    this.add(this._initHead(median))
+    this.add(this._initGlass(median))
+  }
+
+  _initHead (median) {
+    const width = 280
+    const height = 160
+    const x = median - 0.5 * width
+    const y = 20
+    return new DroidHead(x, y, width, height)
+  }
+
+  _initGlass (median) {
+    const width = 224
+    const height = 100
+    const x = median - 0.5 * width
+    const y = 44
+    return new DroidGlass(x, y, width, height)
   }
 }
 
