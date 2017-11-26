@@ -143,26 +143,15 @@ class Backdrop extends Layer {
   }
 
   _initAddons (median) {
+    const width = 35
     const height = 80
     const offsetX = 135
+    let lx = median - offsetX - width
+    let rx = median + offsetX
     let y = 60
-    let gears = [
-      {side: 'l', width: 35},
-      {side: 'r', width: 35},
-      {side: 'l', width: 15},
-      {side: 'r', width: 15}
-    ]
     let layer = new Layer()
-    for (let i = 0; i < gears.length; i++) {
-      let g = gears[i]
-      let x
-      if (g.side === 'l') {
-        x = median - offsetX - g.width
-      } else {
-        x = median + offsetX
-      }
-      layer.add(new DroidGear(g.side, x, y, g.width, height))
-    }
+    layer.add(new DroidGear('l', lx, y, width, height))
+    layer.add(new DroidGear('r', rx, y, width, height))
     return layer
   }
 
