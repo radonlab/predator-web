@@ -10,11 +10,9 @@
 
 // site basic styles
 @import "styles/variables.scss";
+@import "styles/mixins.scss";
 @import "styles/base.scss";
 @import "styles/acicon.scss";
-
-// style utility
-@import "styles/mixins.scss";
 
 // module styles
 @import "speech/style.scss";
