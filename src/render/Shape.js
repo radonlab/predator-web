@@ -13,10 +13,19 @@ import type {Drawable} from './Drawable'
 class Shape implements Drawable {
   x: number
   y: number
+  width: number
+  height: number
 
-  constructor () {
-    this.x = 0
-    this.y = 0
+  constructor (
+    x: number = 0,
+    y: number = 0,
+    width: number = 1,
+    height: number = 1
+  ) {
+    this.x = x
+    this.y = y
+    this.width = width
+    this.height = height
   }
 
   draw (ctx: CanvasRenderingContext2D) {
