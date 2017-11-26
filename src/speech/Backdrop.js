@@ -59,7 +59,8 @@ class DroidHead extends Shape {
 const glassWidth = 220
 const glassHeight = 100
 const glassRadius = 10
-const glassPad = 10
+const glassPadH = 5
+const glassPadV = 10
 
 class DroidGlass extends Shape {
   constructor (x, y) {
@@ -75,40 +76,50 @@ class DroidGlass extends Shape {
     let y1 = this.y + 0.5 * glassHeight
     let cx0 = this.x - 0.2 * glassWidth
     let cx1 = this.x + 0.2 * glassWidth
+    let cy0 = this.y - 0.2 * glassHeight
+    let cy1 = this.y + 0.2 * glassHeight
     // Omit clearing for better performance
     // ctx.clearRect(x0, y0, glassWidth, glassHeight)
     ctx.beginPath()
-    ctx.moveTo(x0 + glassRadius, y0 + glassPad)
+    ctx.moveTo(x0 + glassRadius, y0 + glassPadV)
     ctx.bezierCurveTo(
       cx0, y0,
       cx1, y0,
-      x1 - glassRadius, y0 + glassPad
+      x1 - glassPadH - glassRadius, y0 + glassPadV
     )
     ctx.arcTo(
-      x1, y0 + glassPad,
-      x1, y0 + glassPad + glassRadius,
+      x1 - glassPadH, y0 + glassPadV,
+      x1 - glassPadH, y0 + glassPadV + glassRadius,
       glassRadius
     )
-    ctx.lineTo(x1, y1 - glassPad - glassRadius)
+    ctx.bezierCurveTo(
+      x1, cy0,
+      x1, cy1,
+      x1 - glassPadH, y1 - glassPadV - glassRadius
+    )
     ctx.arcTo(
-      x1, y1 - glassPad,
-      x1 - glassRadius, y1 - glassPad,
+      x1 - glassPadH, y1 - glassPadV,
+      x1 - glassPadH - glassRadius, y1 - glassPadV,
       glassRadius
     )
     ctx.bezierCurveTo(
       cx1, y1,
       cx0, y1,
-      x0 + glassRadius, y1 - glassPad
+      x0 + glassPadH + glassRadius, y1 - glassPadV
     )
     ctx.arcTo(
-      x0, y1 - glassPad,
-      x0, y1 - glassPad - glassRadius,
+      x0 + glassPadH, y1 - glassPadV,
+      x0 + glassPadH, y1 - glassPadV - glassRadius,
       glassRadius
     )
-    ctx.lineTo(x0, y0 + glassPad + glassRadius)
+    ctx.bezierCurveTo(
+      x0, cy1,
+      x0, cy0,
+      x0 + glassPadH, y0 + glassPadV + glassRadius
+    )
     ctx.arcTo(
-      x0, y0 + glassPad,
-      x0 + glassRadius, y0 + glassPad,
+      x0 + glassPadH, y0 + glassPadV,
+      x0 + glassPadH + glassRadius, y0 + glassPadV,
       glassRadius
     )
     ctx.closePath()
