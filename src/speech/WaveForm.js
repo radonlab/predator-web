@@ -5,6 +5,7 @@
  */
 
 import {Stage, Shape, Layer} from '@/render'
+import {cyan, darkGray} from './colordef'
 
 /**
  * Shape that represents sound level
@@ -19,7 +20,9 @@ class WaveColumn extends Shape {
   onDraw (ctx) {
     let width = this.value * this.width
     let x0 = 0.5 * (this.width - width)
-    ctx.clearRect(0, 0, this.width, this.height)
+    ctx.fillStyle = darkGray
+    ctx.fillRect(0, 0, this.width, this.height)
+    ctx.fillStyle = cyan
     ctx.fillRect(x0, 0, width, this.height)
   }
 }
