@@ -56,10 +56,10 @@ class DroidHead extends Shape {
   }
 }
 
-const glassWidth = 220
+const glassWidth = 224
 const glassHeight = 100
 const glassRadius = 10
-const glassPadH = 5
+const glassPadH = 4
 const glassPadV = 10
 
 class DroidGlass extends Shape {
