@@ -18,8 +18,8 @@ class DroidEars extends Shape {
   }
 
   onDraw (ctx) {
-    let lx0 = this.x - 0.5 * headWidth - earWidth
-    let rx0 = this.x + 0.5 * headWidth
+    let lx0 = this.x - 0.5 * 280 - earWidth
+    let rx0 = this.x + 0.5 * 280
     let y0 = this.y - 0.5 * earHeight - earOffset
     ctx.clearRect(lx0, y0, earWidth, earHeight)
     ctx.clearRect(rx0, y0, earWidth, earHeight)
@@ -29,29 +29,21 @@ class DroidEars extends Shape {
   }
 }
 
-const headWidth = 280
-const headHeight = 160
 const headPadH = 10
 const headPadV = 15
 
 class DroidHead extends Shape {
-  constructor (x, y) {
-    super()
-    this.x = x
-    this.y = y
-  }
-
   onDraw (ctx) {
     // center to (x, y)
-    let x0 = this.x - 0.5 * headWidth
-    let y0 = this.y - 0.5 * headHeight
-    let x1 = this.x + 0.5 * headWidth
-    let y1 = this.y + 0.5 * headHeight
-    let cx0 = this.x - 0.2 * headWidth
-    let cx1 = this.x + 0.2 * headWidth
-    let cy0 = this.y - 0.2 * headHeight
-    let cy1 = this.y + 0.1 * headHeight
-    ctx.clearRect(x0, y0, headWidth, headHeight)
+    let x0 = this.x - 0.5 * this.width
+    let y0 = this.y - 0.5 * this.height
+    let x1 = this.x + 0.5 * this.width
+    let y1 = this.y + 0.5 * this.height
+    let cx0 = this.x - 0.2 * this.width
+    let cx1 = this.x + 0.2 * this.width
+    let cy0 = this.y - 0.2 * this.height
+    let cy1 = this.y + 0.1 * this.height
+    ctx.clearRect(x0, y0, this.width, this.height)
     ctx.beginPath()
     ctx.moveTo(x0 + headPadH, y0 + headPadV)
     ctx.bezierCurveTo(
@@ -79,30 +71,22 @@ class DroidHead extends Shape {
   }
 }
 
-const glassWidth = 224
-const glassHeight = 100
 const glassRadius = 10
 const glassPadH = 4
 const glassPadV = 10
 
 class DroidGlass extends Shape {
-  constructor (x, y) {
-    super()
-    this.x = x
-    this.y = y
-  }
-
   onDraw (ctx) {
-    let x0 = this.x - 0.5 * glassWidth
-    let y0 = this.y - 0.5 * glassHeight
-    let x1 = this.x + 0.5 * glassWidth
-    let y1 = this.y + 0.5 * glassHeight
-    let cx0 = this.x - 0.2 * glassWidth
-    let cx1 = this.x + 0.2 * glassWidth
-    let cy0 = this.y - 0.2 * glassHeight
-    let cy1 = this.y + 0.2 * glassHeight
+    let x0 = this.x - 0.5 * this.width
+    let y0 = this.y - 0.5 * this.height
+    let x1 = this.x + 0.5 * this.width
+    let y1 = this.y + 0.5 * this.height
+    let cx0 = this.x - 0.2 * this.width
+    let cx1 = this.x + 0.2 * this.width
+    let cy0 = this.y - 0.2 * this.height
+    let cy1 = this.y + 0.2 * this.height
     // Omit clearing for better performance
-    // ctx.clearRect(x0, y0, glassWidth, glassHeight)
+    // ctx.clearRect(x0, y0, this.width, this.height)
     ctx.beginPath()
     ctx.moveTo(x0 + glassPadH + glassRadius, y0 + glassPadV)
     ctx.bezierCurveTo(
@@ -156,8 +140,8 @@ class Backdrop extends Layer {
     let x = 0.5 * Stage.get('width')
     let y = 100
     this.add(new DroidEars(x, y))
-    this.add(new DroidHead(x, y))
-    this.add(new DroidGlass(x, y - 6))
+    this.add(new DroidHead(x, y, 280, 160))
+    this.add(new DroidGlass(x, y - 6, 224, 100))
   }
 }
 
