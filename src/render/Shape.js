@@ -10,7 +10,6 @@ import type {Drawable} from './Drawable'
 // TODO:(Improve drawing strategy)
 // * Add point relative position
 // * Add context transform matrix
-// * Add save/restore before/after draw
 class Shape implements Drawable {
   x: number
   y: number
@@ -21,7 +20,9 @@ class Shape implements Drawable {
   }
 
   doDraw (ctx: CanvasRenderingContext2D) {
+    ctx.save()
     this.draw(ctx)
+    ctx.restore()
   }
 
   draw (ctx: CanvasRenderingContext2D) {}

@@ -52,10 +52,12 @@ class Layer implements Drawable {
   }
 
   doDraw (ctx: CanvasRenderingContext2D) {
+    ctx.save()
     this.draw(ctx)
     for (let i = 0; i < this._children.length; i++) {
       this._children[i].doDraw(ctx)
     }
+    ctx.restore()
   }
 
   draw (ctx: CanvasRenderingContext2D) {}
