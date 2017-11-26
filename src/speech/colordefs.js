@@ -5,15 +5,19 @@
  */
 
 const black = '#000000'
+const white = '#ffffff'
 const cyan = '#33eefe'
 const orange = '#fc8800'
 const darkGray = '#323842'
+const dustGray = '#666970'
 const lightGray = '#e5e5e5'
 
 export {
   black,
+  white,
   cyan,
   orange,
   darkGray,
+  dustGray,
   lightGray
 }
