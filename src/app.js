@@ -12,9 +12,11 @@ import SpeechPortal from '@/speech/SpeechPortal'
 class App extends React.Component {
   render () {
     return (
-      <div className="container">
-        <SpeechPortal />
-      </div>
+      <header className="header">
+        <div className="container">
+          <SpeechPortal />
+        </div>
+      </header>
     )
   }
 }
