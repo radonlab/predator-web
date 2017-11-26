@@ -5,7 +5,7 @@
  */
 
 import {Stage, Shape, Layer} from '@/render'
-import {orange, darkGray, lightGray} from './colordefs'
+import {orange, darkGray, dustGray, lightGray} from './colordefs'
 
 /**
  * Decorative gear on the two sides of the droid
@@ -157,14 +157,14 @@ class DroidGlass extends Shape {
 
 class DroidMouth extends Shape {
   onDraw (ctx) {
-    let x0 = 0.15 * this.width
-    let x1 = 0.85 * this.width
+    let x0 = 0.1 * this.width
+    let x1 = 0.9 * this.width
     ctx.beginPath()
     ctx.moveTo(0, this.height)
     ctx.lineTo(x0, 0)
     ctx.lineTo(x1, 0)
     ctx.lineTo(this.width, this.height)
-    // ctx.strokeStyle = ''
+    ctx.strokeStyle = dustGray
     ctx.stroke()
   }
 }
