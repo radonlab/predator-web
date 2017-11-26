@@ -7,12 +7,18 @@
 import {Stage, Shape, Layer} from '@/render'
 import {orange, darkGray, lightGray} from './colordefs'
 
+/**
+ * Decorative gear on the two sides of the droid
+ * @extends Shape
+ */
 class DroidGear extends Shape {
   constructor (side, ...args) {
     super(...args)
     if (side === 'r') {
+      // no transform
       this.matrix = [1, 0, 0, 1, 0, 0]
     } else {
+      // Y-axis flip + right moving
       this.matrix = [-1, 0, 0, 1, this.width, 0]
     }
     this.bows = [
@@ -45,6 +51,10 @@ class DroidGear extends Shape {
   }
 }
 
+/**
+ * Head of the droid
+ * @extends Shape
+ */
 class DroidHead extends Shape {
   onDraw (ctx) {
     const hpad = 10
@@ -82,6 +92,10 @@ class DroidHead extends Shape {
   }
 }
 
+/**
+ * Glass pane that displays waveform inside
+ * @extends Shape
+ */
 class DroidGlass extends Shape {
   onDraw (ctx) {
     const r = 10
