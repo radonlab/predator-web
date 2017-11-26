@@ -6,9 +6,6 @@
 
 import {Stage, Shape, Layer} from '@/render'
 
-const columnWidth = 200
-const columnHeight = 12
-
 /**
  * Shape that represents sound level
  * @extends Shape
@@ -35,12 +32,13 @@ class WaveColumn extends Shape {
 class WaveForm extends Layer {
   constructor () {
     super()
-    let x = 0.5 * Stage.get('width')
-    let y = 60
-    let gap = columnHeight + 2
-    const colsNum = 5
-    for (let i = 0; i < colsNum; i++) {
-      this.add(new WaveColumn(x, y + i * gap))
+    const x = 0.5 * Stage.get('width')
+    const y = 60
+    const width = 200
+    const height = 12
+    const gap = height + 2
+    for (let i = 0; i < 5; i++) {
+      this.add(new WaveColumn(x, y + i * gap, width, height))
     }
   }
 
