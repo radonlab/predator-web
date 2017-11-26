@@ -155,6 +155,10 @@ class DroidGlass extends Shape {
   }
 }
 
+/**
+ * Layer that draws all background elements
+ * @extends Layer
+ */
 class Backdrop extends Layer {
   constructor () {
     super()
