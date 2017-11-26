@@ -21,7 +21,7 @@ class WaveColumn extends Shape {
     this.value = 0
   }
 
-  draw (ctx) {
+  onDraw (ctx) {
     let width = this.value * columnWidth
     ctx.clearRect(this.x - 0.5 * columnWidth, this.y, columnWidth, columnHeight)
     ctx.fillRect(this.x - 0.5 * width, this.y, width, columnHeight)

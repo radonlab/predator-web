@@ -17,7 +17,7 @@ class DroidEars extends Shape {
     this.y = y
   }
 
-  draw (ctx) {
+  onDraw (ctx) {
     let lx0 = this.x - 0.5 * headWidth - earWidth
     let rx0 = this.x + 0.5 * headWidth
     let y0 = this.y - 0.5 * earHeight - earOffset
@@ -41,7 +41,7 @@ class DroidHead extends Shape {
     this.y = y
   }
 
-  draw (ctx) {
+  onDraw (ctx) {
     // center to (x, y)
     let x0 = this.x - 0.5 * headWidth
     let y0 = this.y - 0.5 * headHeight
@@ -92,7 +92,7 @@ class DroidGlass extends Shape {
     this.y = y
   }
 
-  draw (ctx) {
+  onDraw (ctx) {
     let x0 = this.x - 0.5 * glassWidth
     let y0 = this.y - 0.5 * glassHeight
     let x1 = this.x + 0.5 * glassWidth
