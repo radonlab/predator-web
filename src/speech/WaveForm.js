@@ -11,17 +11,15 @@ import {Stage, Shape, Layer} from '@/render'
  * @extends Shape
  */
 class WaveColumn extends Shape {
-  constructor (x, y) {
-    super()
-    this.x = x
-    this.y = y
+  constructor (...args) {
+    super(...args)
     this.value = 0
   }
 
   onDraw (ctx) {
-    let width = this.value * columnWidth
-    ctx.clearRect(this.x - 0.5 * columnWidth, this.y, columnWidth, columnHeight)
-    ctx.fillRect(this.x - 0.5 * width, this.y, width, columnHeight)
+    let width = this.value * this.width
+    ctx.clearRect(this.x - 0.5 * this.width, this.y, this.width, this.height)
+    ctx.fillRect(this.x - 0.5 * width, this.y, width, this.height)
   }
 }
 
