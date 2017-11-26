@@ -11,12 +11,6 @@ const earHeight = 50
 const earOffset = 10
 
 class DroidEars extends Shape {
-  constructor (x, y) {
-    super()
-    this.x = x
-    this.y = y
-  }
-
   onDraw (ctx) {
     let lx0 = this.x - 0.5 * 280 - earWidth
     let rx0 = this.x + 0.5 * 280
@@ -29,49 +23,47 @@ class DroidEars extends Shape {
   }
 }
 
-const headPadH = 10
-const headPadV = 15
-
 class DroidHead extends Shape {
   onDraw (ctx) {
+    const hpad = 10
+    const vpad = 15
     let cx0 = 0.3 * this.width
     let cx1 = 0.7 * this.width
     let cy0 = 0.3 * this.height
     let cy1 = 0.6 * this.height
     ctx.clearRect(0, 0, this.width, this.height)
     ctx.beginPath()
-    ctx.moveTo(headPadH, headPadV)
+    ctx.moveTo(hpad, vpad)
     ctx.bezierCurveTo(
       cx0, 0,
       cx1, 0,
-      this.width - headPadH, headPadV
+      this.width - hpad, vpad
     )
     ctx.bezierCurveTo(
       this.width, cy0,
       this.width, cy1,
-      this.width - headPadH, this.height - headPadV
+      this.width - hpad, this.height - vpad
     )
     ctx.bezierCurveTo(
       cx1, this.height,
       cx0, this.height,
-      headPadH, this.height - headPadV
+      hpad, this.height - vpad
     )
     ctx.bezierCurveTo(
       0, cy1,
       0, cy0,
-      headPadH, headPadV
+      hpad, vpad
     )
     ctx.closePath()
     ctx.stroke()
   }
 }
 
-const glassRadius = 10
-const glassPadH = 4
-const glassPadV = 10
-
 class DroidGlass extends Shape {
   onDraw (ctx) {
+    const r = 10
+    const hpad = 4
+    const vpad = 10
     let cx0 = 0.3 * this.width
     let cx1 = 0.7 * this.width
     let cy0 = 0.3 * this.height
@@ -79,46 +71,46 @@ class DroidGlass extends Shape {
     // Omit clearing for better performance
     // ctx.clearRect(x0, y0, this.width, this.height)
     ctx.beginPath()
-    ctx.moveTo(glassPadH + glassRadius, glassPadV)
+    ctx.moveTo(hpad + r, vpad)
     ctx.bezierCurveTo(
       cx0, 0,
       cx1, 0,
-      this.width - glassPadH - glassRadius, glassPadV
+      this.width - hpad - r, vpad
     )
     ctx.arcTo(
-      this.width - glassPadH, glassPadV,
-      this.width - glassPadH, glassPadV + glassRadius,
-      glassRadius
+      this.width - hpad, vpad,
+      this.width - hpad, vpad + r,
+      r
     )
     ctx.bezierCurveTo(
       this.width, cy0,
       this.width, cy1,
-      this.width - glassPadH, this.height - glassPadV - glassRadius
+      this.width - hpad, this.height - vpad - r
     )
     ctx.arcTo(
-      this.width - glassPadH, this.height - glassPadV,
-      this.width - glassPadH - glassRadius, this.height - glassPadV,
-      glassRadius
+      this.width - hpad, this.height - vpad,
+      this.width - hpad - r, this.height - vpad,
+      r
     )
     ctx.bezierCurveTo(
       cx1, this.height,
       cx0, this.height,
-      glassPadH + glassRadius, this.height - glassPadV
+      hpad + r, this.height - vpad
     )
     ctx.arcTo(
-      glassPadH, this.height - glassPadV,
-      glassPadH, this.height - glassPadV - glassRadius,
-      glassRadius
+      hpad, this.height - vpad,
+      hpad, this.height - vpad - r,
+      r
     )
     ctx.bezierCurveTo(
       0, cy1,
       0, cy0,
-      glassPadH, glassPadV + glassRadius
+      hpad, vpad + r
     )
     ctx.arcTo(
-      glassPadH, glassPadV,
-      glassPadH + glassRadius, glassPadV,
-      glassRadius
+      hpad, vpad,
+      hpad + r, vpad,
+      r
     )
     ctx.closePath()
     ctx.stroke()
