@@ -30,6 +30,7 @@ class Shape implements Drawable {
 
   draw (ctx: CanvasRenderingContext2D) {
     ctx.save()
+    ctx.translate(this.x, this.y)
     this.onDraw(ctx)
     ctx.restore()
   }
