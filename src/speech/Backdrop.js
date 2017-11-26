@@ -155,6 +155,10 @@ class DroidGlass extends Shape {
   }
 }
 
+/**
+ * Mouth of the droid
+ * @extends Shape
+ */
 class DroidMouth extends Shape {
   onDraw (ctx) {
     let x0 = 0.1 * this.width
