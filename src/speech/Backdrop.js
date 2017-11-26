@@ -5,7 +5,7 @@
  */
 
 import {Stage, Shape, Layer} from '@/render'
-import {darkGray, lightGray} from './colordefs'
+import {orange, darkGray, lightGray} from './colordefs'
 
 class DroidGear extends Shape {
   constructor (side, ...args) {
@@ -15,6 +15,10 @@ class DroidGear extends Shape {
     } else {
       this.matrix = [-1, 0, 0, 1, this.width, 0]
     }
+    this.bows = [
+      {color: lightGray, size: 1},
+      {color: orange, size: 0.4}
+    ]
   }
 
   onDraw (ctx) {
@@ -23,17 +27,21 @@ class DroidGear extends Shape {
     let cy1 = 0.7 * this.height
     ctx.clearRect(0, 0, this.width, this.height)
     ctx.transform.apply(ctx, this.matrix)
-    ctx.beginPath()
-    ctx.moveTo(0, 0)
-    ctx.lineTo(pad, 0)
-    ctx.bezierCurveTo(
-      this.width, cy0,
-      this.width, cy1,
-      pad, this.height
-    )
-    ctx.lineTo(0, this.height)
-    ctx.closePath()
-    ctx.stroke()
+    for (let i = 0; i < this.bows.length; i++) {
+      let bow = this.bows[i]
+      ctx.beginPath()
+      ctx.moveTo(0, 0)
+      ctx.lineTo(pad, 0)
+      ctx.bezierCurveTo(
+        this.width * bow.size, cy0,
+        this.width * bow.size, cy1,
+        pad, this.height
+      )
+      ctx.lineTo(0, this.height)
+      ctx.closePath()
+      ctx.fillStyle = bow.color
+      ctx.fill()
+    }
   }
 }
 
