@@ -23,13 +23,21 @@ class Shape implements Drawable {
     this.y = y
     this.width = width
     this.height = height
+    this._dirty = true
+  }
+
+  redraw () {
+    this._dirty = true
   }
 
   draw (ctx: CanvasRenderingContext2D) {
-    ctx.save()
-    ctx.translate(this.x, this.y)
-    this.onDraw(ctx)
-    ctx.restore()
+    if (this._dirty) {
+      ctx.save()
+      ctx.translate(this.x, this.y)
+      this.onDraw(ctx)
+      ctx.restore()
+      this._dirty = false
+    }
   }
 
   onDraw (ctx: CanvasRenderingContext2D) {}
