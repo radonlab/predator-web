@@ -18,7 +18,12 @@ class SpeechPortal extends React.Component {
     this.binds(['toggleSearch'])
     this.canvas = null
     this.viewer = null
-    this.bell = new WaveBell()
+    this.bell = new WaveBell({
+      meter: {
+        minLimit: 5,
+        maxLimit: 35
+      }
+    })
     this.setupBell(this.bell)
   }
 
