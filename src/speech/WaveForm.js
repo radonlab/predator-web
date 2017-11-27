@@ -14,11 +14,19 @@ import {cyan, darkGray} from './colordefs'
 class WaveColumn extends Shape {
   constructor (...args) {
     super(...args)
-    this.value = 0
+    this._value = 0
+  }
+
+  get value () {
+    return this._value
+  }
+
+  set value (value) {
+    this._value = value
   }
 
   onDraw (ctx) {
-    let width = this.value * this.width
+    let width = this._value * this.width
     let x0 = 0.5 * (this.width - width)
     ctx.fillStyle = darkGray
     ctx.fillRect(0, 0, this.width, this.height)
