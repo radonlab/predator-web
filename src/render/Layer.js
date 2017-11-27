@@ -51,6 +51,9 @@ class Layer implements Drawable {
     }
   }
 
+  /**
+   * Mark all children to be redrawn
+   */
   redraw () {
     for (let i = 0; i < this._children.length; i++) {
       this._children[i].redraw()

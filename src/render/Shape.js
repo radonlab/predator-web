@@ -26,6 +26,9 @@ class Shape implements Drawable {
     this._dirty = true
   }
 
+  /**
+   * Mark the shape to be redrawn on next frame
+   */
   redraw () {
     this._dirty = true
   }
