@@ -61,15 +61,10 @@ class Layer implements Drawable {
   }
 
   draw (ctx: CanvasRenderingContext2D) {
-    ctx.save()
-    this.onDraw(ctx)
     for (let i = 0; i < this._children.length; i++) {
       this._children[i].draw(ctx)
     }
-    ctx.restore()
   }
-
-  onDraw (ctx: CanvasRenderingContext2D) {}
 }
 
 export default Layer
