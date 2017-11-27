@@ -23,6 +23,7 @@ class WaveColumn extends Shape {
 
   set value (value) {
     this._value = value
+    this.redraw()
   }
 
   onDraw (ctx) {
