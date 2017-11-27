@@ -12,6 +12,7 @@ class Shape implements Drawable {
   y: number
   width: number
   height: number
+  _dirty: boolean
 
   constructor (
     x: number = 0,

@@ -6,5 +6,6 @@
  */
 
 export interface Drawable {
-  draw (ctx: CanvasRenderingContext2D): void
+  redraw (): void;
+  draw (ctx: CanvasRenderingContext2D): void;
 }
