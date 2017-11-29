@@ -7,6 +7,7 @@
 import axios from 'axios'
 
 const http = axios.create({
+  baseURL: location.origin
 })
 
 export default http

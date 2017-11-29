@@ -60,6 +60,14 @@ class SpeechPortal extends React.Component {
   }
 
   sendRequest (audio) {
+    let data = new FormData()
+    data.append('audio', audio)
+    // send audio data
+    http.post('/api/asr', data).then(resp => {
+      console.log(resp)
+    }).catch(err => {
+      console.log(err)
+    })
   }
 
   render () {
