@@ -55,6 +55,7 @@
     "webpack-merge": "^4.1.1"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "normalize.css": "^7.0.0",
     "react": "^16.1.1",
