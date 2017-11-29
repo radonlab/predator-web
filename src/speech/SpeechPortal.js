@@ -7,6 +7,7 @@
 import React from 'react'
 import WaveBell from 'wavebell'
 import cns from 'classnames'
+import http from '@/core/http'
 import Visualizer from './Visualizer'
 
 class SpeechPortal extends React.Component {
@@ -54,7 +55,11 @@ class SpeechPortal extends React.Component {
       this.bell.start(1000 / 25)
     } else {
       this.bell.stop()
+      this.sendRequest(this.bell.result)
     }
+  }
+
+  sendRequest (audio) {
   }
 
   render () {
