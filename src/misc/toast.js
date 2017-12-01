@@ -27,6 +27,7 @@ dom.fn.getChildWithClass = function (clz) {
 }
 
 const dismissTime = 4000
+const transitionTime = 1500
 
 /**
  * Get toast container
@@ -58,6 +59,9 @@ function addToast (box, text) {
 
 function dismissToast (toast) {
   toast.addClass('fade')
+  setTimeout(() => {
+    box.remove(toast.el)
+  }, transitionTime)
 }
 
 const toast = {
