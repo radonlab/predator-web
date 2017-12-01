@@ -45,6 +45,7 @@ function getToastBox () {
 function addToast (box, text) {
   let toast = dom(document.createElement('div'))
   toast.addClass('toast')
+  toast.el.innerText = text
   box.append(toast.el)
   setTimeout(() => {
     box.remove(toast.el)
