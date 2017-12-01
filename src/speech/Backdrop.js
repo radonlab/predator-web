@@ -203,8 +203,22 @@ class Backdrop extends Layer {
   blink () {
     let mouth = this._children[3]
     if (mouth) {
-      mouth.color = darkGray
+      this._blinkMouth(mouth, 0)
     }
+  }
+
+  _blinkMouth (mouth, n) {
+    if (n === 6) {
+      return
+    }
+    if (n % 2 === 0) {
+      mouth.color = darkGray
+    } else {
+      mouth.color = lightGray
+    }
+    setTimeout(() => {
+      this._blinkMouth(mouth, n + 1)
+    }, 200)
   }
 
   _initAddons (median) {
