@@ -9,12 +9,14 @@
  */
 class SimpleParser {
   constructor () {
+    this.onResult = function (url) {}
   }
 
   parse (result) {
     // tokenize
     let tokens = this.tokenize(result.result)
     let url = this.analyse(tokens)
+    this.onResult(url)
   }
 
   tokenize (dict) {
@@ -42,6 +44,69 @@ class SimpleParser {
   }
 
   analyse (tokens) {
+    let pred = ''
+    let dest = ''
+    let args = ''
+    if (tokens.length === 1) {
+      // pass
+    } else if (tokens.length === 2) {
+      pred = tokens[0]
+      dest = tokens[1]
+    } else if (tokens.length >= 3) {
+      pred = tokens[0]
+      dest = tokens[1]
+      args = tokens.slice(2).join('')
+    }
+    // concat url
+    let type = ''
+    let node = dTree
+    switch (pred) {
+      case '打开':
+        type = 'open'
+        node = node.open
+        break
+      case '搜索':
+        type = 'search'
+        node = node.search
+        break
+      default:
+        return
+    }
+    switch (dest) {
+      case '百度':
+        node = node.bd
+        break
+      case '谷歌':
+        node = node.gg
+        break
+      case '京东':
+        node = node.jd
+        break
+      case '淘宝':
+        node = node.tb
+        break
+      default:
+        return
+    }
+    if (type === 'search' && args !== '') {
+      node = node + args
+    }
+    return node
+  }
+}
+
+const dTree = {
+  'open': {
+    'bd': 'https://www.baidu.com/',
+    'gg': 'https://www.google.com/',
+    'jd': 'https://www.jd.com/',
+    'tb': 'https://www.taobao.com/'
+  },
+  'search': {
+    'bd': 'https://www.baidu.com/s?wd=',
+    'gg': 'https://www.google.com.hk/search?q=',
+    'jd': 'https://search.jd.com/Search?keyword=',
+    'tb': 'https://s.taobao.com/search?q='
   }
 }
 
