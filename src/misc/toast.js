@@ -11,27 +11,30 @@ dom.fn.append = function (el) {
   this.el.appendChild(el)
 }
 
-dom.fn.hasChildWithClass = function (clz) {
+dom.fn.getChildWithClass = function (clz) {
   let els = this.el.children
   for (let i = 0; i < els.length; i++) {
-    if (dom(els[i]).hasClass(clz)) {
-      return true
+    let item = dom(els[i])
+    if (item.hasClass(clz)) {
+      return item
     }
   }
-  return false
+  return null
 }
 
 /**
  * Initialize toast container
  */
-function initToastBox () {
+function getToastBox () {
   let body = dom(document.body)
   // append container if not exist
-  if (!body.hasChildWithClass('toast-box')) {
-    let box = document.createElement('div')
+  let box = body.getChildWithClass('toast-box')
+  if (!box) {
+    box = document.createElement('div')
     dom(box).addClass('toast-box')
     body.append(box)
   }
+  return box
 }
 
 const toast = {
