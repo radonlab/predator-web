@@ -37,6 +37,7 @@ class Visualizer extends Stage {
   }
 
   blink () {
+    this.backLayer.blink()
   }
 
   update () {

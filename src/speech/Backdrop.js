@@ -200,6 +200,13 @@ class Backdrop extends Layer {
     this.add(this._initMouth(median))
   }
 
+  blink () {
+    let mouth = this._children[3]
+    if (mouth) {
+      mouth.color = darkGray
+    }
+  }
+
   _initAddons (median) {
     const width = 35
     const height = 80
