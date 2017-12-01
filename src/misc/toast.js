@@ -26,7 +26,7 @@ dom.fn.getChildWithClass = function (clz) {
   return null
 }
 
-const dismissTime = 3000
+const dismissTime = 4000
 
 /**
  * Get toast container
@@ -52,8 +52,12 @@ function addToast (box, text) {
   toast.append(hint.el)
   box.append(toast.el)
   setTimeout(() => {
-    box.remove(toast.el)
+    dismissToast(toast)
   }, dismissTime)
+}
+
+function dismissToast (toast) {
+  toast.addClass('fade')
 }
 
 const toast = {
