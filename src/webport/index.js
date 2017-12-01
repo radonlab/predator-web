@@ -18,7 +18,15 @@ dom.fn.insertAfter = function (el) {
 }
 
 const webport = {
+  frame: null,
   initView () {
+    this.frame = document.createElement('iframe')
+    this.initStyles(this.frame.style)
+    dom(document.getElementById('app')).insertAfter(this.frame)
+  },
+  initStyles (style) {
+    style.width = '100%'
+    style.border = 'none'
   }
 }
 
