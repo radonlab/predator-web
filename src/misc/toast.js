@@ -5,6 +5,8 @@
  */
 
 const toast = {
+  makeToast (text) {
+  }
 }
 
 export default toast

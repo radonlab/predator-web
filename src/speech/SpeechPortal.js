@@ -8,6 +8,7 @@ import React from 'react'
 import WaveBell from 'wavebell'
 import cns from 'classnames'
 import http from '@/core/http'
+import toast from '@/misc/toast'
 import Visualizer from './Visualizer'
 
 class SpeechPortal extends React.Component {
@@ -79,7 +80,8 @@ class SpeechPortal extends React.Component {
   }
 
   handleError (error) {
-    console.log(err)
+    toast.makeToast('Oops... Network error')
+    console.error(error)
   }
 
   render () {
