@@ -17,6 +17,8 @@ class Visualizer extends Stage {
     super(canvas)
     this.active = false
     this.init()
+    // draw first frame
+    this.renderFrame()
   }
 
   init () {
