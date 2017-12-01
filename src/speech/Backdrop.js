@@ -216,6 +216,8 @@ class Backdrop extends Layer {
     } else {
       mouth.color = lightGray
     }
+    // need parent redraw to clear
+    this.redraw()
     setTimeout(() => {
       this._blinkMouth(mouth, n + 1)
     }, 200)

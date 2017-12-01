@@ -37,7 +37,12 @@ class Visualizer extends Stage {
   }
 
   blink () {
+    this.startUpdate()
+    // start blink
     this.backLayer.blink()
+    setTimeout(() => {
+      this.stopUpdate()
+    }, 200 * 5)
   }
 
   update () {
