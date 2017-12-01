@@ -50,8 +50,10 @@ function addToast (box, text) {
   let hint = dom(document.createElement('span'))
   toast.addClass('toast')
   hint.el.innerText = text
+  // require an inner span
   toast.append(hint.el)
   box.append(toast.el)
+  // Dismiss after a while
   setTimeout(() => {
     dismissToast(box, toast)
   }, dismissTime)
@@ -59,6 +61,7 @@ function addToast (box, text) {
 
 function dismissToast (box, toast) {
   toast.addClass('fade')
+  // Remove on transition end
   setTimeout(() => {
     box.remove(toast.el)
   }, transitionTime)
