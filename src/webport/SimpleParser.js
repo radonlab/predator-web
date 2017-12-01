@@ -14,7 +14,7 @@ class SimpleParser {
   parse (result) {
     // tokenize
     let tokens = this.tokenize(result.result)
-    console.log(tokens)
+    let url = this.analyse(tokens)
   }
 
   tokenize (dict) {
@@ -27,11 +27,19 @@ class SimpleParser {
         let cw = word.cw
         for (let k = 0; k < cw.length; k++) {
           let token = cw[k]
-          tokens.push(token)
+          if (this.filter(token)) {
+            tokens.push(token.w)
+          }
         }
       }
     }
     return tokens
+  }
+
+  filter (tokens) {
+  }
+
+  analyse (tokens) {
   }
 }
 
