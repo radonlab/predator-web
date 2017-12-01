@@ -81,7 +81,7 @@ class SpeechPortal extends React.Component {
 
   handleError (error) {
     toast.makeToast('Oops... Network error occurred')
-    console.error(error)
+    console.error(error) // eslint-disable-line
   }
 
   render () {
