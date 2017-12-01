@@ -73,14 +73,14 @@ class SpeechPortal extends React.Component {
   }
 
   handleResult (result) {
+    let overview = result.overview
     this.setState({
-      query: result.overview
+      query: overview
     })
-    console.log(result)
   }
 
   handleError (error) {
-    toast.makeToast('Oops... Network error')
+    toast.makeToast('Oops... Network error occurred')
     console.error(error)
   }
 
