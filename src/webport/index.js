@@ -26,6 +26,9 @@ const webport = {
     this.frame = document.createElement('iframe')
     this.initStyles(this.frame.style)
     dom(document.getElementById('app')).insertAfter(this.frame)
+    parser.onResult = (url) => {
+      this.frame.src = url
+    }
   },
   initStyles (style) {
     style.width = '100%'

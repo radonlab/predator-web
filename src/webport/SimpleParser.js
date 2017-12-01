@@ -4,6 +4,8 @@
  * found in the LICENSE file.
  */
 
+import toast from '@/misc/toast'
+
 /**
  * A simple parser for iflytek asr result
  */
@@ -16,7 +18,11 @@ class SimpleParser {
     // tokenize
     let tokens = this.tokenize(result.result)
     let url = this.analyse(tokens)
-    this.onResult(url)
+    if (url) {
+      this.onResult(url)
+    } else {
+      toast.makeToast('Sorry, Can you speak again?')
+    }
   }
 
   tokenize (dict) {
