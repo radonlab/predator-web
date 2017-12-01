@@ -4,6 +4,19 @@
  * found in the LICENSE file.
  */
 
+import dom from '@/util/minidom'
+
+// Extends minidom
+
+/**
+ * Insert the element after this dom
+ * @param {Element} el - element to be inserted
+ */
+dom.fn.insertAfter = function (el) {
+  let next = this.el.nextSibling
+  this.el.parentNode.insertBefore(el, next)
+}
+
 const webport = {
   initView () {
   }
