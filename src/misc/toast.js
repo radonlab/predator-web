@@ -26,6 +26,12 @@ dom.fn.hasChildWithClass = function (clz) {
  */
 function initToastBox () {
   let body = dom(document.body)
+  // append container if not exist
+  if (!body.hasChildWithClass('toast-box')) {
+    let box = document.createElement('div')
+    dom(box).addClass('toast-box')
+    body.append(box)
+  }
 }
 
 const toast = {
