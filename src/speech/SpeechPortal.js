@@ -9,6 +9,7 @@ import WaveBell from 'wavebell'
 import cns from 'classnames'
 import http from '@/core/http'
 import toast from '@/misc/toast'
+import webport from '@/webport'
 import Visualizer from './Visualizer'
 
 class SpeechPortal extends React.Component {
@@ -50,6 +51,7 @@ class SpeechPortal extends React.Component {
 
   componentDidMount () {
     this.viewer = new Visualizer(this.canvas)
+    webport.initView()
   }
 
   toggleSearch () {
