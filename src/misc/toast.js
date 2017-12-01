@@ -4,6 +4,15 @@
  * found in the LICENSE file.
  */
 
+import dom from '@/util/minidom'
+
+/**
+ * Initialize toast container
+ */
+function initToastBox () {
+  let body = dom(document.body)
+}
+
 const toast = {
   makeToast (text) {
   }
