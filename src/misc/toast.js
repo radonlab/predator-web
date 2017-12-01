@@ -23,16 +23,17 @@ dom.fn.getChildWithClass = function (clz) {
 }
 
 /**
- * Initialize toast container
+ * Get toast container
+ * Create new one if not exist
  */
 function getToastBox () {
   let body = dom(document.body)
   // append container if not exist
   let box = body.getChildWithClass('toast-box')
   if (!box) {
-    box = document.createElement('div')
-    dom(box).addClass('toast-box')
-    body.append(box)
+    box = dom(document.createElement('div'))
+    box.addClass('toast-box')
+    body.append(box.el)
   }
   return box
 }
