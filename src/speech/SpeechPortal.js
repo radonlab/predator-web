@@ -14,7 +14,8 @@ class SpeechPortal extends React.Component {
   constructor () {
     super()
     this.state = {
-      speaking: false
+      speaking: false,
+      query: ''
     }
     this.binds(['toggleSearch'])
     this.canvas = null
@@ -71,6 +72,9 @@ class SpeechPortal extends React.Component {
   }
 
   handleResult (result) {
+    this.setState({
+      query: result.overview
+    })
     console.log(result)
   }
 
@@ -82,7 +86,7 @@ class SpeechPortal extends React.Component {
     return (
       <div className="speech-portal">
         <div className="search-box">
-          <input type="text" />
+          <input type="text" value={this.state.query} />
           <a className="vbtn" href="javascript:void(0)"
             onClick={this.toggleSearch}>
             <span className={'acicon-speech' + cns({'-on': this.state.speaking})}></span>
