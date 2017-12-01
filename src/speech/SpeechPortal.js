@@ -64,17 +64,17 @@ class SpeechPortal extends React.Component {
     data.append('audio', audio)
     // send audio data
     http.post('/api/asr', data).then(resp => {
-      this.procResult(resp.data)
+      this.handleResult(resp.data)
     }).catch(err => {
-      this.procError(err)
+      this.handleError(err)
     })
   }
 
-  procResult (result) {
+  handleResult (result) {
     console.log(result)
   }
 
-  procError (error) {
+  handleError (error) {
     console.log(err)
   }
 
