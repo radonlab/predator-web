@@ -5,16 +5,23 @@
  */
 
 .toast-box {
-  text-align: center;
-  margin: 15px 15px 30px;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  margin-bottom: 30px;
+  transform: translateX(-50%);
 
   .toast {
-    display: inline-block;
-    background-color: #d6eef8;
-    color: #327090;
-    padding: 1rem 3rem;
+    text-align: center;
     margin-bottom: 1rem;
-    border: 1px solid darken(#d6eef8, 10%);
-    border-radius: 3px;
+
+    span {
+      display: inline-block;
+      background-color: #d6eef8;
+      color: #327090;
+      padding: 1rem 3rem;
+      border: 1px solid darken(#d6eef8, 10%);
+      border-radius: 3px;
+    }
   }
 }

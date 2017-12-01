@@ -26,6 +26,8 @@ dom.fn.getChildWithClass = function (clz) {
   return null
 }
 
+const dismissTime = 3000
+
 /**
  * Get toast container
  * Create new one if not exist
@@ -44,12 +46,14 @@ function getToastBox () {
 
 function addToast (box, text) {
   let toast = dom(document.createElement('div'))
+  let hint = dom(document.createElement('span'))
   toast.addClass('toast')
-  toast.el.innerText = text
+  hint.el.innerText = text
+  toast.append(hint.el)
   box.append(toast.el)
   setTimeout(() => {
     box.remove(toast.el)
-  }, 3000);
+  }, dismissTime)
 }
 
 const toast = {
