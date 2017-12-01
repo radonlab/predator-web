@@ -106,7 +106,7 @@ class DroidGlass extends Shape {
     let cy0 = 0.3 * this.height
     let cy1 = 0.7 * this.height
     // Omit clearing for better performance
-    // ctx.clearRect(x0, y0, this.width, this.height)
+    // ctx.clearRect(0, 0, this.width, this.height)
     ctx.beginPath()
     ctx.moveTo(hpad + r, vpad)
     ctx.bezierCurveTo(
