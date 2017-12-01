@@ -14,6 +14,7 @@ class App extends React.Component {
     return (
       <header className="header">
         <div className="container">
+          <h2 className="heading">Search Robot</h2>
           <SpeechPortal />
         </div>
       </header>
