@@ -6,6 +6,21 @@
 
 import dom from '@/util/minidom'
 
+// Extends minidom functions
+dom.fn.append = function (el) {
+  this.el.appendChild(el)
+}
+
+dom.fn.hasChildWithClass = function (clz) {
+  let els = this.el.children
+  for (let i = 0; i < els.length; i++) {
+    if (dom(els[i]).hasClass(clz)) {
+      return true
+    }
+  }
+  return false
+}
+
 /**
  * Initialize toast container
  */
