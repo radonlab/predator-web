@@ -36,7 +36,9 @@ class SimpleParser {
     return tokens
   }
 
-  filter (tokens) {
+  filter (token) {
+    let text = token.w
+    return !(/(\u3002|\uFF0C)+/.test(text))
   }
 
   analyse (tokens) {
