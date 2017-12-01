@@ -53,11 +53,11 @@ function addToast (box, text) {
   toast.append(hint.el)
   box.append(toast.el)
   setTimeout(() => {
-    dismissToast(toast)
+    dismissToast(box, toast)
   }, dismissTime)
 }
 
-function dismissToast (toast) {
+function dismissToast (box, toast) {
   toast.addClass('fade')
   setTimeout(() => {
     box.remove(toast.el)
