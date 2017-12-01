@@ -5,6 +5,7 @@
  */
 
 import dom from '@/util/minidom'
+import SimpleParser from './SimpleParser'
 
 // Extends minidom
 
@@ -17,6 +18,8 @@ dom.fn.insertAfter = function (el) {
   this.el.parentNode.insertBefore(el, next)
 }
 
+const parser = new SimpleParser()
+
 const webport = {
   frame: null,
   initView () {
@@ -27,6 +30,9 @@ const webport = {
   initStyles (style) {
     style.width = '100%'
     style.border = 'none'
+  },
+  parseQuery (result) {
+    parser.parse(result)
   }
 }
 

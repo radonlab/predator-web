@@ -83,6 +83,7 @@ class SpeechPortal extends React.Component {
     this.setState({
       query: overview
     })
+    webport.parseQuery(result)
   }
 
   handleError (error) {
