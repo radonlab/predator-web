@@ -74,6 +74,8 @@ class SpeechPortal extends React.Component {
 
   handleResult (result) {
     let overview = result.overview
+    // trim end punctuations
+    overview = overview.replace(/(\u3002|\uFF0C)+$/, '')
     this.setState({
       query: overview
     })
