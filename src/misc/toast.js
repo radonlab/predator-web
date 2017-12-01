@@ -11,6 +11,10 @@ dom.fn.append = function (el) {
   this.el.appendChild(el)
 }
 
+dom.fn.remove = function (el) {
+  this.el.removeChild(el)
+}
+
 dom.fn.getChildWithClass = function (clz) {
   let els = this.el.children
   for (let i = 0; i < els.length; i++) {
@@ -38,8 +42,19 @@ function getToastBox () {
   return box
 }
 
+function addToast (box, text) {
+  let toast = dom(document.createElement('div'))
+  toast.addClass('toast')
+  box.append(toast.el)
+  setTimeout(() => {
+    box.remove(toast.el)
+  }, 3000);
+}
+
 const toast = {
   makeToast (text) {
+    let box = getToastBox()
+    addToast(box, text)
   }
 }
 
