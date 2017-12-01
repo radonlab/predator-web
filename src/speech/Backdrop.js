@@ -198,11 +198,13 @@ class Backdrop extends Layer {
     this.add(this._initHead(median))
     this.add(this._initGlass(median))
     this.add(this._initMouth(median))
+    this._timer = 0
   }
 
   blink () {
     let mouth = this._children[3]
     if (mouth) {
+      clearTimeout(this._timer)
       this._blinkMouth(mouth, 0)
     }
   }
@@ -218,7 +220,7 @@ class Backdrop extends Layer {
     }
     // need parent redraw to clear
     this.redraw()
-    setTimeout(() => {
+    this._timer = setTimeout(() => {
       this._blinkMouth(mouth, n + 1)
     }, 200)
   }
