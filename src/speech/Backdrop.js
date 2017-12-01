@@ -160,6 +160,11 @@ class DroidGlass extends Shape {
  * @extends Shape
  */
 class DroidMouth extends Shape {
+  constructor (...args) {
+    super(...args)
+    this._color = lightGray
+  }
+
   onDraw (ctx) {
     let x0 = 0.1 * this.width
     let x1 = 0.9 * this.width
@@ -170,6 +175,14 @@ class DroidMouth extends Shape {
     ctx.lineTo(this.width, this.height)
     ctx.strokeStyle = dustGray
     ctx.stroke()
+    ctx.closePath()
+    ctx.fillStyle = this._color
+    ctx.fill()
+  }
+
+  set color (color) {
+    this._color = color
+    this.redraw()
   }
 }
 
