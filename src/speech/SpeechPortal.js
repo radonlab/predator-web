@@ -66,6 +66,8 @@ class SpeechPortal extends React.Component {
     data.append('audio', audio)
     // send audio data
     http.post('/api/asr', data).then(resp => {
+      // start mouse blink
+      this.viewer.blink()
       this.handleResult(resp.data)
     }).catch(err => {
       this.handleError(err)

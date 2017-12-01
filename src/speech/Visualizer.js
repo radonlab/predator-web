@@ -36,6 +36,9 @@ class Visualizer extends Stage {
     this.waveLayer.clear()
   }
 
+  blink () {
+  }
+
   update () {
     if (this.active) {
       requestAnimationFrame(() => this.update())
