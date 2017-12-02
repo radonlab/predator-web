@@ -95,6 +95,9 @@ class SimpleParser {
       case '淘宝':
         node = node.tb
         break
+      case '知乎':
+        node = node.zh
+        break
       default:
         node = node.bd
         break
@@ -111,13 +114,15 @@ const dTree = {
     'bd': 'https://www.baidu.com/',
     'gg': 'https://www.google.com/',
     'jd': 'https://www.jd.com/',
-    'tb': 'https://www.taobao.com/'
+    'tb': 'https://www.taobao.com/',
+    'zh': 'https://www.zhihu.com/'
   },
   'search': {
     'bd': 'https://www.baidu.com/s?wd=',
     'gg': 'https://www.google.com.hk/search?q=',
     'jd': 'https://search.jd.com/Search?keyword=',
-    'tb': 'https://s.taobao.com/search?q='
+    'tb': 'https://s.taobao.com/search?q=',
+    'zh': 'https://www.zhihu.com/search?q='
   }
 }
 
