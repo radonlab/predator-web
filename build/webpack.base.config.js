@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = {
   entry: {
     predator: ['./src/app.js', './src/index.scss'],
-    vendor: ['react', 'react-dom']
+    vendor: ['react', 'react-dom', 'axios']
   },
   output: {
     path: settings.destPath,
