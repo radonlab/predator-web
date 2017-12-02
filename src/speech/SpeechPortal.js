@@ -112,7 +112,8 @@ class SpeechPortal extends React.Component {
           </a>
         </div>
         <div className="stage-holder">
-          <canvas ref={el => (this.canvas = el)}></canvas>
+          <canvas ref={el => (this.canvas = el)}
+            onClick={this.toggleSearch}></canvas>
         </div>
       </div>
     )
