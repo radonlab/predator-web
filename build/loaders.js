@@ -13,8 +13,9 @@ function urlLoader (env) {
   return {
     loader: 'url-loader',
     options: {
-      name: '[path][name].[ext]?v=[hash:8]',
-      limit: 1024 * 8
+      name: '[name].[ext]?v=[hash:8]',
+      limit: 1024 * 8,
+      outputPath: 'assets/'
     }
   }
 }
