@@ -17,7 +17,7 @@ function urlLoader (env) {
     options: {
       name: settings.destName.static,
       limit: 1024 * 8,
-      outputPath: 'assets/'
+      outputPath: 'static/'
     }
   }
 }
