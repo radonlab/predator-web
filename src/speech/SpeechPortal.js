@@ -59,9 +59,18 @@ class SpeechPortal extends React.Component {
   toggleSearch () {
     if (this.bell.state === 'inactive') {
       this.bell.start(1000 / 25)
+      this.setAutoStop()
     } else {
       this.bell.stop()
     }
+  }
+
+  setAutoStop () {
+    setTimeout(() => {
+      if (this.bell.state === 'recording') {
+        this.bell.stop()
+      }
+    }, 1000 * 5)
   }
 
   sendRequest (audio) {
