@@ -40,4 +40,9 @@ body {
 
 .heading {
   margin: 0.5em 1em;
+
+  @include screen-gt (lg) {
+    max-width: 720px;
+    margin: 0.5em auto;
+  }
 }
