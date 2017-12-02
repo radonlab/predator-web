@@ -54,7 +54,7 @@ class SimpleParser {
     let dest = ''
     let args = ''
     if (tokens.length === 1) {
-      // pass
+      args = tokens[0]
     } else if (tokens.length === 2) {
       pred = tokens[0]
       dest = tokens[1]
@@ -76,7 +76,11 @@ class SimpleParser {
         node = node.search
         break
       default:
-        return
+        type = 'search'
+        node = node.search
+        args = pred + dest + args
+        dest = ''
+        break
     }
     switch (dest) {
       case '百度':
@@ -92,9 +96,10 @@ class SimpleParser {
         node = node.tb
         break
       default:
-        return
+        node = node.bd
+        break
     }
-    if (type === 'search' && args !== '') {
+    if (type === 'search') {
       node = node + args
     }
     return node
