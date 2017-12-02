@@ -42,6 +42,8 @@ class SpeechPortal extends React.Component {
       })
     })
     bell.on('stop', e => {
+      // send result after stop
+      this.sendRequest(this.bell.result)
       this.viewer.stopUpdate()
       this.setState({
         speaking: false
@@ -59,7 +61,6 @@ class SpeechPortal extends React.Component {
       this.bell.start(1000 / 25)
     } else {
       this.bell.stop()
-      this.sendRequest(this.bell.result)
     }
   }
 
