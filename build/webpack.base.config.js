@@ -28,7 +28,7 @@ module.exports = {
       template: './template/index.html'
     }),
     new CopyWebpackPlugin([{
-      from: './static'
+      from: './static/res'
     }])
   ]
 }
