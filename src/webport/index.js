@@ -32,6 +32,8 @@ const webport = {
   },
   initStyles (style) {
     style.width = '100%'
+    style.height = (window.innerHeight - 480) + 'px'
+    style.minHeight = '50%'
     style.border = 'none'
   },
   parseQuery (result) {
