@@ -8,9 +8,6 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 
 module.exports = filters(merge(baseConfig, {
-  output: {
-    filename: settings.targetName
-  },
   module: {
     rules: loaders.get('production')
   },

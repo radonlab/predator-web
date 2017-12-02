@@ -1,5 +1,7 @@
 'use strict'
 
+const settings = require('./settings')
+
 function cssLoader (env) {
   return {
     loader: 'css-loader',
@@ -13,7 +15,7 @@ function urlLoader (env) {
   return {
     loader: 'url-loader',
     options: {
-      name: '[name].[ext]?v=[hash:8]',
+      name: settings.destName.static,
       limit: 1024 * 8,
       outputPath: 'assets/'
     }

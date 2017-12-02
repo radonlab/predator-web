@@ -13,7 +13,7 @@ function info (msg) {
 }
 
 let extractPlugin = new ExtractTextPlugin({
-  filename: '[name].css?v=[contenthash:8]'
+  filename: settings.destName.css
 })
 
 function patchLoaders (loaders) {

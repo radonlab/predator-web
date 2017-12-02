@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: settings.destPath,
-    filename: settings.targetName
+    filename: settings.destName.js
   },
   resolve: {
     alias: {
