@@ -9,7 +9,7 @@ module.exports = {
   destName: {
     js: '[name].js?v=[hash:8]',
     css: '[name].css?v=[contenthash:8]',
-    static: '[name].[ext]?v=[hash:8]'
+    static: '[name]-[hash:8].[ext]'
   },
   options: {
     productionSourceMap: 'hidden-source-map',
