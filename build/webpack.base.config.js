@@ -16,7 +16,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': settings.srcPath
+      '@': settings.srcPath,
+      'static': settings.staticPath
     }
   },
   plugins: [
