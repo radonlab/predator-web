@@ -29,6 +29,8 @@ class Stage extends Layer {
   }
 
   _initContext () {
+    // get pixel ratio
+    let ratio = window.devicePixelRatio
     // init canvas size
     let css = getComputedStyle(this.canvas)
     let width = parseInt(css.width, 10)
