@@ -29,20 +29,24 @@ class Stage extends Layer {
   }
 
   _initContext () {
-    // get pixel ratio
-    let ratio = window.devicePixelRatio
     // init canvas size
     let css = getComputedStyle(this.canvas)
     let width = parseInt(css.width, 10)
     let height = parseInt(css.height, 10)
     this.resize(width, height)
     // get context
-    return this.canvas.getContext('2d')
+    let ctx = this.canvas.getContext('2d')
+    // set scale
+    ctx.scale(ratio, ratio)
+    return ctx
   }
 
   resize (w, h) {
-    this.canvas.width = w
-    this.canvas.height = h
+    // get pixel ratio
+    let ratio = window.devicePixelRatio
+    // set pixel size
+    this.canvas.width = ratio * w
+    this.canvas.height = ratio * h
   }
 
   renderFrame () {
