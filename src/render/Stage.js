@@ -6,26 +6,13 @@
 
 import Layer from './Layer'
 
-const store = {
-  canvas: null,
-  get width () {
-    return this.canvas.width
-  },
-  get height () {
-    return this.canvas.height
-  }
-}
+const store = {}
 
 class Stage extends Layer {
   constructor (canvas) {
     super()
     this.canvas = canvas
     this._context = this._initContext()
-    if (store.canvas) {
-      throw new Error('Stage cannot be reinitialized')
-    } else {
-      store.canvas = canvas
-    }
   }
 
   _initContext () {
